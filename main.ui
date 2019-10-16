@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Risk Manager</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="categoryView">
@@ -234,7 +234,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="func_risk2">
+                <widget class="QCheckBox" name="tech_risk2">
                  <property name="text">
                   <string/>
                  </property>
@@ -263,7 +263,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="func_risk3">
+                <widget class="QCheckBox" name="tech_risk3">
                  <property name="text">
                   <string/>
                  </property>
@@ -292,7 +292,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="func_risk5">
+                <widget class="QCheckBox" name="tech_risk5">
                  <property name="text">
                   <string/>
                  </property>
@@ -321,7 +321,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="func_risk4">
+                <widget class="QCheckBox" name="tech_risk4">
                  <property name="text">
                   <string/>
                  </property>
@@ -356,7 +356,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="func_risk6">
+                <widget class="QCheckBox" name="tech_risk6">
                  <property name="text">
                   <string/>
                  </property>
@@ -385,7 +385,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="func_risk7">
+                <widget class="QCheckBox" name="tech_risk7">
                  <property name="text">
                   <string/>
                  </property>
@@ -414,7 +414,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="func_risk1">
+                <widget class="QCheckBox" name="tech_risk1">
                  <property name="text">
                   <string/>
                  </property>
@@ -799,7 +799,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="calculateRiskProbability">
           <property name="geometry">
            <rect>
             <x>310</x>
