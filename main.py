@@ -13,7 +13,7 @@ class Window(QtWidgets.QMainWindow):
         
     def init_UI(self):
         self.calculateRiskProbability.clicked.connect(self.risk_probability)
-
+        
     def init_Data(self):
         self.risk_types = ('tech', 'money', 'plan', 'manage')
         self.risks = dict.fromkeys(self.risk_types, 0)

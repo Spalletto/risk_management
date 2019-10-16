@@ -20,7 +20,7 @@
       <x>0</x>
       <y>0</y>
       <width>921</width>
-      <height>581</height>
+      <height>591</height>
      </rect>
     </property>
     <property name="tabPosition">
@@ -28,6 +28,9 @@
     </property>
     <property name="tabShape">
      <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
     </property>
     <property name="iconSize">
      <size>
@@ -60,7 +63,7 @@
         <x>10</x>
         <y>10</y>
         <width>891</width>
-        <height>531</height>
+        <height>551</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -822,20 +825,1656 @@
          </widget>
         </widget>
        </widget>
-       <zorder>riskSourcesWidget</zorder>
-       <zorder>groupBox</zorder>
-       <zorder>groupBox_2</zorder>
       </widget>
       <widget class="QWidget" name="riskEventsTab">
        <attribute name="title">
         <string>Потенційні ризикові події</string>
        </attribute>
+       <widget class="QStackedWidget" name="riskEventsWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>871</width>
+          <height>521</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="page_3">
+         <widget class="QTableWidget" name="risk_prob_table_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>40</y>
+            <width>231</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="autoScroll">
+           <bool>true</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="textElideMode">
+           <enum>Qt::ElideMiddle</enum>
+          </property>
+          <row>
+           <property name="text">
+            <string>Технічні ризики</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Вартісні ризики</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Планові ризики</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Управлінські ризики</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Загалом</string>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Ймовірність, %</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_21">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>851</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri Light</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Результати підрахунку ймовірності ризиків:</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_4">
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>19</y>
+            <width>871</width>
+            <height>491</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>900</width>
+            <height>500</height>
+           </size>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>852</width>
+             <height>956</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_145">
+              <property name="font">
+               <font>
+                <family>Calibri Light</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Якщо наведені нижче твердження справджуються для вашої специфікації вимог, то відмітьте це у відповідному полі.
+Після завершення натисність кнопку &quot;Обрахувати ймовірність появи ризиків&quot;, щоб переглянути результати роботи.</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_149">
+              <item>
+               <widget class="QGroupBox" name="groupBox_19">
+                <property name="font">
+                 <font>
+                  <family>Calibri</family>
+                 </font>
+                </property>
+                <property name="title">
+                 <string>Технічні ризикові події</string>
+                </property>
+                <widget class="QWidget" name="layoutWidget_140">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>50</y>
+                   <width>570</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_150">
+                  <item>
+                   <widget class="QLabel" name="label_146">
+                    <property name="text">
+                     <string>Затримки у постачанні інструментальних засобів, 
+необхідних для підтримки процесу розроблення ПЗ:                                                        </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event2_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_141">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>80</y>
+                   <width>589</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_151">
+                  <item>
+                   <widget class="QLabel" name="label_147">
+                    <property name="text">
+                     <string>Небажання команди виконавців ПЗ використовувати
+інструментальні засоби для підтримки процесу розроблення ПЗ:                          </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event3_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_142">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>130</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_152">
+                  <item>
+                   <widget class="QLabel" name="label_148">
+                    <property name="text">
+                     <string>Формування запитів на більш потужні 
+інструментальні засоби розроблення ПЗ:                                                                                  </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event5_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_143">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>110</y>
+                   <width>404</width>
+                   <height>21</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_153">
+                  <item>
+                   <widget class="QLabel" name="label_149">
+                    <property name="text">
+                     <string>Відмова команди виконавців від CASE-засобів розроблення ПЗ:                              </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event4_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_144">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>160</y>
+                   <width>411</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_154">
+                  <item>
+                   <widget class="QLabel" name="label_150">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>8</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Недостатня продуктивність баз(и) даних 
+для підтримки процесу розроблення ПЗ:                                                                                    </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event6_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_145">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>190</y>
+                   <width>568</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_155">
+                  <item>
+                   <widget class="QLabel" name="label_151">
+                    <property name="text">
+                     <string>Програмні компоненти, які використовують повторно в ПЗ, 
+мають дефекти та обмежені функціональні можливості:                                               </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event7_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_146">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>20</y>
+                   <width>478</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_156">
+                  <item>
+                   <widget class="QLabel" name="label_152">
+                    <property name="text">
+                     <string>Затримки у постачанні обладнання, необхідного 
+для підтримки процесу розроблення ПЗ:                                                                                    </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event1_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_147">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>220</y>
+                   <width>568</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_157">
+                  <item>
+                   <widget class="QLabel" name="label_153">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>24</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Неефективність програмного коду, згенерованого 
+CASE-засобами розроблення ПЗ:                                                                                                       </string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event8_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_148">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>250</y>
+                   <width>589</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_158">
+                  <item>
+                   <widget class="QLabel" name="label_154">
+                    <property name="text">
+                     <string>Hеможливість інтеграції CASE-засобів з іншими інструментальними 
+засобами для підтримки процесу розроблення ПЗ:                                                           </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event9_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_149">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>280</y>
+                   <width>568</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_159">
+                  <item>
+                   <widget class="QLabel" name="label_155">
+                    <property name="text">
+                     <string>Швидкість виявлення дефектів у програмному коді є
+ нижчою від раніше запланованих термінів:                                                                           </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event10_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_150">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>310</y>
+                   <width>568</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_160">
+                  <item>
+                   <widget class="QLabel" name="label_156">
+                    <property name="text">
+                     <string>Поява дефектних системних компонент, які 
+використовують для розроблення ПЗ:                                                                                           </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="tech_event11_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox_20">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>350</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Calibri</family>
+                 </font>
+                </property>
+                <property name="title">
+                 <string>Вартісні ризикові події</string>
+                </property>
+                <widget class="QWidget" name="layoutWidget_151">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>20</y>
+                   <width>504</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_161">
+                  <item>
+                   <widget class="QLabel" name="label_157">
+                    <property name="text">
+                     <string>Hедооцінювання витрат на реалізацію 
+програмного проекту (надмірно низька вартість):                                                               </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event1_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_152">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>50</y>
+                   <width>446</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_162">
+                  <item>
+                   <widget class="QLabel" name="label_158">
+                    <property name="text">
+                     <string>Переоцінювання витрат на реалізацію 
+програмного проекту (надмірно висока вартість):                                                               </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event2_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_153">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>80</y>
+                   <width>399</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_163">
+                  <item>
+                   <widget class="QLabel" name="label_159">
+                    <property name="text">
+                     <string>Фінансові ускладнення у компанії-замовника ПЗ:                                                               </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event3_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_154">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>140</y>
+                   <width>519</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_164">
+                  <item>
+                   <widget class="QLabel" name="label_160">
+                    <property name="text">
+                     <string>Збільшення бюджету програмного проекта з ініціативи 
+компанії-розробника ПЗ під час його реалізації:                                                                 </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event5_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_155">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>170</y>
+                   <width>518</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_165">
+                  <item>
+                   <widget class="QLabel" name="label_161">
+                    <property name="text">
+                     <string>Зменшення бюджету програмного проекта з ініціативи 
+компанії-замовника ПЗ під час його реалізації:                                                                    </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event6_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_156">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>200</y>
+                   <width>399</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_166">
+                  <item>
+                   <widget class="QLabel" name="label_162">
+                    <property name="text">
+                     <string>Висока вартість виконання повторних робіт, 
+необхідних для зміни вимог до ПЗ:                                                                                                   </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event7_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_157">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>230</y>
+                   <width>399</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_167">
+                  <item>
+                   <widget class="QLabel" name="label_163">
+                    <property name="text">
+                     <string>Pеорганізація структурних підрозділів у компанії-замовника ПЗ:                            </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event8_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_158">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>260</y>
+                   <width>552</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_168">
+                  <item>
+                   <widget class="QLabel" name="label_164">
+                    <property name="text">
+                     <string>Pеорганізація команди виконавців у компанії-розробника ПЗ:                                 </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event9_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_159">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>110</y>
+                   <width>399</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_169">
+                  <item>
+                   <widget class="QLabel" name="label_165">
+                    <property name="text">
+                     <string>Фінансові ускладнення у компанії-розробника ПЗ:                                                            </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="money_event4_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_170">
+              <item>
+               <widget class="QGroupBox" name="groupBox_21">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>505</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Calibri</family>
+                 </font>
+                </property>
+                <property name="title">
+                 <string>Планові ризики</string>
+                </property>
+                <widget class="QWidget" name="layoutWidget_160">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>20</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_171">
+                  <item>
+                   <widget class="QLabel" name="label_166">
+                    <property name="text">
+                     <string>Зміни графіка виконання робіт з боку замовника чи виконавця:                               </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event1_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_161">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>50</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_172">
+                  <item>
+                   <widget class="QLabel" name="label_167">
+                    <property name="text">
+                     <string>Порушення графіка виконання робіт у компанії-розробника ПЗ:                             </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event2_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_162">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>80</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_173">
+                  <item>
+                   <widget class="QLabel" name="label_168">
+                    <property name="text">
+                     <string>Потреба зміни користувацьких вимог до ПЗ з боку компанії-замовника ПЗ:     </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event3_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_163">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>110</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_174">
+                  <item>
+                   <widget class="QLabel" name="label_169">
+                    <property name="text">
+                     <string>Потреба зміни функціональних вимог до ПЗ з боку компанії-розробника ПЗ:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event4_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_164">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>140</y>
+                   <width>448</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_175">
+                  <item>
+                   <widget class="QLabel" name="label_170">
+                    <property name="text">
+                     <string>Потреба виконання великої кількості повторних робіт, 
+необхідних для зміни вимог до ПЗ:                                                                                                  </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event5_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_165">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>170</y>
+                   <width>500</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_176">
+                  <item>
+                   <widget class="QLabel" name="label_171">
+                    <property name="text">
+                     <string>Hедооцінювання тривалості етапів реалізації 
+програмного проекту з боку компанії-розробника ПЗ:                                                     </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event6_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_166">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>200</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_177">
+                  <item>
+                   <widget class="QLabel" name="label_172">
+                    <property name="text">
+                     <string>Переоцінювання тривалості етапів реалізації програмного проекту:                 </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event7_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_167">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>230</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_178">
+                  <item>
+                   <widget class="QLabel" name="label_173">
+                    <property name="text">
+                     <string>Остаточний розмір ПЗ перевищує заплановані його характеристики:                 </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event8_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_168">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>260</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_179">
+                  <item>
+                   <widget class="QLabel" name="label_174">
+                    <property name="text">
+                     <string>Остаточний розмір ПЗ значно менший за планові його характеристики:           </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event9_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_169">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>290</y>
+                   <width>442</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_180">
+                  <item>
+                   <widget class="QLabel" name="label_175">
+                    <property name="text">
+                     <string>Поява на ринку аналогічного ПЗ до виходу замовленого:                                              </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event10_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_170">
+                 <property name="geometry">
+                  <rect>
+                   <x>20</x>
+                   <y>320</y>
+                   <width>401</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_181">
+                  <item>
+                   <widget class="QLabel" name="label_176">
+                    <property name="text">
+                     <string>Поява на ринку більш конкурентоздатного ПЗ:                                                                       </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="plan_event11_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox_22">
+                <property name="font">
+                 <font>
+                  <family>Calibri</family>
+                 </font>
+                </property>
+                <property name="title">
+                 <string>Ризики реалізації та управління проектом</string>
+                </property>
+                <widget class="QWidget" name="layoutWidget_171">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>20</y>
+                   <width>472</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_182">
+                  <item>
+                   <widget class="QLabel" name="label_177">
+                    <property name="text">
+                     <string>Hизький моральний стан персоналу команди виконавців ПЗ:                                          </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event1_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_172">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>50</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_183">
+                  <item>
+                   <widget class="QLabel" name="label_178">
+                    <property name="text">
+                     <string>Hизька взаємодія між членами команди виконавців ПЗ:                                                      </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event2_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_173">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>80</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_184">
+                  <item>
+                   <widget class="QLabel" name="label_179">
+                    <property name="text">
+                     <string>Пасивність керівника (менеджера) програмного проекту:                                                 </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event3_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_174">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>110</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_185">
+                  <item>
+                   <widget class="QLabel" name="label_180">
+                    <property name="text">
+                     <string>Недостатня компетентність керівника (менеджера) програмного проекту:          </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event4_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_175">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>140</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_186">
+                  <item>
+                   <widget class="QLabel" name="label_181">
+                    <property name="text">
+                     <string>Незадоволеність замовника результатами етапів 
+реалізації програмного проекту:                                                                                                           </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event5_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_176">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>170</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_187">
+                  <item>
+                   <widget class="QLabel" name="label_182">
+                    <property name="text">
+                     <string>Hедостатня кількість фахівців у команді виконавців 
+ПЗ з необхідним професійним рівнем:                                                                                               </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event6_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_177">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>200</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_188">
+                  <item>
+                   <widget class="QLabel" name="label_183">
+                    <property name="text">
+                     <string>Xвороба провідного виконавця в найкритичніший момент розроблення ПЗ:       </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event7_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_178">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>230</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_189">
+                  <item>
+                   <widget class="QLabel" name="label_184">
+                    <property name="text">
+                     <string>Oдночасна хвороба декількох виконавців підчас розроблення ПЗ:                            </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event8_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_179">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>260</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_190">
+                  <item>
+                   <widget class="QLabel" name="label_185">
+                    <property name="text">
+                     <string>Hеможливість організації необхідного навчання 
+персоналу команди виконавців ПЗ:                                                                                                      </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event9_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_180">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>290</y>
+                   <width>620</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_191">
+                  <item>
+                   <widget class="QLabel" name="label_186">
+                    <property name="text">
+                     <string>Hедооцінювання необхідної кількості розробників (підрядників 
+і субпідрядників) на етапах життєвого циклу розроблення ПЗ:                                       </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event10_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_181">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>320</y>
+                   <width>620</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_192">
+                  <item>
+                   <widget class="QLabel" name="label_187">
+                    <property name="text">
+                     <string>Переоцінювання необхідної кількості розробників (підрядників 
+і субпідрядників) на етапах життєвого циклу розроблення ПЗ:                                       </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event11_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_182">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>350</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_193">
+                  <item>
+                   <widget class="QLabel" name="label_188">
+                    <property name="text">
+                     <string>Hадмірне документування результатів на 
+етапах реалізації програмного проекту:                                                                                         </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event12_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_183">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>380</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_194">
+                  <item>
+                   <widget class="QLabel" name="label_189">
+                    <property name="text">
+                     <string>Hедостатнє документування результатів на 
+етапах реалізації програмного проекту:                                                                                         </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event13_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_184">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>410</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_195">
+                  <item>
+                   <widget class="QLabel" name="label_190">
+                    <property name="text">
+                     <string>Hереалістичне прогнозування результатів на 
+етапах реалізації програмного проекту:                                                                                         </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event14_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_185">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>440</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_196">
+                  <item>
+                   <widget class="QLabel" name="label_191">
+                    <property name="text">
+                     <string>Hедостатній професійний рівень представників від компанії-замовника ПЗ:      </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event15_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget_186">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>470</y>
+                   <width>507</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_197">
+                  <item>
+                   <widget class="QLabel" name="label_192">
+                    <property name="text">
+                     <string>Зміна пріоритетів у процесі управління програмним проектом:                                    </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QCheckBox" name="manage_event16_3">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="tristate">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QPushButton" name="calculateRiskProbability_4">
+              <property name="font">
+               <font>
+                <family>Calibri Light</family>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Обрахувати ймовірність появи ризиків</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
       </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Tab 2</string>
+      <string>ії</string>
      </attribute>
     </widget>
    </widget>
