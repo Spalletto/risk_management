@@ -67,7 +67,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="riskSourcesTab">
        <attribute name="title">
@@ -849,7 +849,7 @@
          <number>1</number>
         </property>
         <widget class="QWidget" name="page_3">
-         <widget class="QTableWidget" name="risk_prob_table_2">
+         <widget class="QTableWidget" name="event_prob_table">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -958,7 +958,7 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
+             <y>-467</y>
              <width>852</width>
              <height>956</height>
             </rect>
@@ -1009,7 +1009,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event2_3">
+                   <widget class="QCheckBox" name="tech_event2">
                     <property name="text">
                      <string/>
                     </property>
@@ -1039,7 +1039,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event3_3">
+                   <widget class="QCheckBox" name="tech_event3">
                     <property name="text">
                      <string/>
                     </property>
@@ -1069,7 +1069,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event5_3">
+                   <widget class="QCheckBox" name="tech_event5">
                     <property name="text">
                      <string/>
                     </property>
@@ -1098,7 +1098,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event4_3">
+                   <widget class="QCheckBox" name="tech_event4">
                     <property name="text">
                      <string/>
                     </property>
@@ -1134,7 +1134,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event6_3">
+                   <widget class="QCheckBox" name="tech_event6">
                     <property name="text">
                      <string/>
                     </property>
@@ -1164,7 +1164,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event7_3">
+                   <widget class="QCheckBox" name="tech_event7">
                     <property name="text">
                      <string/>
                     </property>
@@ -1194,7 +1194,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event1_3">
+                   <widget class="QCheckBox" name="tech_event1">
                     <property name="text">
                      <string/>
                     </property>
@@ -1233,7 +1233,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event8_3">
+                   <widget class="QCheckBox" name="tech_event8">
                     <property name="text">
                      <string/>
                     </property>
@@ -1263,7 +1263,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event9_3">
+                   <widget class="QCheckBox" name="tech_event9">
                     <property name="text">
                      <string/>
                     </property>
@@ -1293,7 +1293,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event10_3">
+                   <widget class="QCheckBox" name="tech_event10">
                     <property name="text">
                      <string/>
                     </property>
@@ -1323,7 +1323,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tech_event11_3">
+                   <widget class="QCheckBox" name="tech_event11">
                     <property name="text">
                      <string/>
                     </property>
@@ -1371,7 +1371,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event1_3">
+                   <widget class="QCheckBox" name="money_event1">
                     <property name="text">
                      <string/>
                     </property>
@@ -1401,7 +1401,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event2_3">
+                   <widget class="QCheckBox" name="money_event2">
                     <property name="text">
                      <string/>
                     </property>
@@ -1430,7 +1430,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event3_3">
+                   <widget class="QCheckBox" name="money_event3">
                     <property name="text">
                      <string/>
                     </property>
@@ -1460,7 +1460,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event5_3">
+                   <widget class="QCheckBox" name="money_event5">
                     <property name="text">
                      <string/>
                     </property>
@@ -1490,7 +1490,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event6_3">
+                   <widget class="QCheckBox" name="money_event6">
                     <property name="text">
                      <string/>
                     </property>
@@ -1520,7 +1520,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event7_3">
+                   <widget class="QCheckBox" name="money_event7">
                     <property name="text">
                      <string/>
                     </property>
@@ -1549,7 +1549,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event8_3">
+                   <widget class="QCheckBox" name="money_event8">
                     <property name="text">
                      <string/>
                     </property>
@@ -1578,7 +1578,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event9_3">
+                   <widget class="QCheckBox" name="money_event9">
                     <property name="text">
                      <string/>
                     </property>
@@ -1607,7 +1607,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="money_event4_3">
+                   <widget class="QCheckBox" name="money_event4">
                     <property name="text">
                      <string/>
                     </property>
@@ -1658,7 +1658,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event1_3">
+                   <widget class="QCheckBox" name="plan_event1">
                     <property name="text">
                      <string/>
                     </property>
@@ -1687,7 +1687,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event2_3">
+                   <widget class="QCheckBox" name="plan_event2">
                     <property name="text">
                      <string/>
                     </property>
@@ -1716,7 +1716,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event3_3">
+                   <widget class="QCheckBox" name="plan_event3">
                     <property name="text">
                      <string/>
                     </property>
@@ -1745,7 +1745,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event4_3">
+                   <widget class="QCheckBox" name="plan_event4">
                     <property name="text">
                      <string/>
                     </property>
@@ -1775,7 +1775,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event5_3">
+                   <widget class="QCheckBox" name="plan_event5">
                     <property name="text">
                      <string/>
                     </property>
@@ -1805,7 +1805,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event6_3">
+                   <widget class="QCheckBox" name="plan_event6">
                     <property name="text">
                      <string/>
                     </property>
@@ -1834,7 +1834,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event7_3">
+                   <widget class="QCheckBox" name="plan_event7">
                     <property name="text">
                      <string/>
                     </property>
@@ -1863,7 +1863,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event8_3">
+                   <widget class="QCheckBox" name="plan_event8">
                     <property name="text">
                      <string/>
                     </property>
@@ -1892,7 +1892,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event9_3">
+                   <widget class="QCheckBox" name="plan_event9">
                     <property name="text">
                      <string/>
                     </property>
@@ -1921,7 +1921,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event10_3">
+                   <widget class="QCheckBox" name="plan_event10">
                     <property name="text">
                      <string/>
                     </property>
@@ -1950,7 +1950,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="plan_event11_3">
+                   <widget class="QCheckBox" name="plan_event11">
                     <property name="text">
                      <string/>
                     </property>
@@ -1991,7 +1991,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event1_3">
+                   <widget class="QCheckBox" name="manage_event1">
                     <property name="text">
                      <string/>
                     </property>
@@ -2020,7 +2020,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event2_3">
+                   <widget class="QCheckBox" name="manage_event2">
                     <property name="text">
                      <string/>
                     </property>
@@ -2049,7 +2049,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event3_3">
+                   <widget class="QCheckBox" name="manage_event3">
                     <property name="text">
                      <string/>
                     </property>
@@ -2078,7 +2078,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event4_3">
+                   <widget class="QCheckBox" name="manage_event4">
                     <property name="text">
                      <string/>
                     </property>
@@ -2108,7 +2108,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event5_3">
+                   <widget class="QCheckBox" name="manage_event5">
                     <property name="text">
                      <string/>
                     </property>
@@ -2138,7 +2138,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event6_3">
+                   <widget class="QCheckBox" name="manage_event6">
                     <property name="text">
                      <string/>
                     </property>
@@ -2167,7 +2167,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event7_3">
+                   <widget class="QCheckBox" name="manage_event7">
                     <property name="text">
                      <string/>
                     </property>
@@ -2196,7 +2196,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event8_3">
+                   <widget class="QCheckBox" name="manage_event8">
                     <property name="text">
                      <string/>
                     </property>
@@ -2226,7 +2226,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event9_3">
+                   <widget class="QCheckBox" name="manage_event9">
                     <property name="text">
                      <string/>
                     </property>
@@ -2256,7 +2256,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event10_3">
+                   <widget class="QCheckBox" name="manage_event10">
                     <property name="text">
                      <string/>
                     </property>
@@ -2286,7 +2286,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event11_3">
+                   <widget class="QCheckBox" name="manage_event11">
                     <property name="text">
                      <string/>
                     </property>
@@ -2316,7 +2316,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event12_3">
+                   <widget class="QCheckBox" name="manage_event12">
                     <property name="text">
                      <string/>
                     </property>
@@ -2346,7 +2346,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event13_3">
+                   <widget class="QCheckBox" name="manage_event13">
                     <property name="text">
                      <string/>
                     </property>
@@ -2376,7 +2376,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event14_3">
+                   <widget class="QCheckBox" name="manage_event14">
                     <property name="text">
                      <string/>
                     </property>
@@ -2405,7 +2405,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event15_3">
+                   <widget class="QCheckBox" name="manage_event15">
                     <property name="text">
                      <string/>
                     </property>
@@ -2434,7 +2434,7 @@ CASE-засобами розроблення ПЗ:                              
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="manage_event16_3">
+                   <widget class="QCheckBox" name="manage_event16">
                     <property name="text">
                      <string/>
                     </property>
@@ -2450,7 +2450,7 @@ CASE-засобами розроблення ПЗ:                              
              </layout>
             </item>
             <item>
-             <widget class="QPushButton" name="calculateRiskProbability_4">
+             <widget class="QPushButton" name="calculateEventProbability">
               <property name="font">
                <font>
                 <family>Calibri Light</family>
@@ -2478,6 +2478,19 @@ CASE-засобами розроблення ПЗ:                              
      </attribute>
     </widget>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>580</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -2488,8 +2501,20 @@ CASE-засобами розроблення ПЗ:                              
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMain">
+    <property name="title">
+     <string>Main</string>
+    </property>
+    <addaction name="actionMain_menu"/>
+   </widget>
+   <addaction name="menuMain"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionMain_menu">
+   <property name="text">
+    <string>Main menu</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
