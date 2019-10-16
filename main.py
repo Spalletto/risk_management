@@ -23,17 +23,34 @@ class Window(QtWidgets.QMainWindow):
         self.generate_marks_button.clicked.connect(self.generate)
         self.event_analysys_button.clicked.connect(self.event_analysys)
         self.group_result_button.clicked.connect(self.group_result)
+        self.generate_loss_button.clicked.connect(self.generate_loss)
+        self.calculate_vrer_button.clicked.connect(self.calculate_vrer)
 
     def generate(self):
         for i in range(1, 47):
             for j in range(1, 11):
                 self.risk_analysys_table.setItem(i-1, j, QTableWidgetItem(str(round(random(), 2))))
+    
+    def generate_loss(self):
+        for i in range(1, 47):
+            value = round(random(), 2)
+            self.loss.append(value)
+            self.risk_size_table.setItem(i-1, 1, QTableWidgetItem(str(value)))
+
+    def calculate_vrer(self):
+        for i in range(1, 47):
+            vrer = round(self.event_risks[i-1] * self.loss[i-1], 2)
+            self.vrer.append(vrer)
+            self.vrer_table.setItem(i-1, 1, QTableWidgetItem(str(self.event_risks[i-1])))
+            self.vrer_table.setItem(i-1, 2, QTableWidgetItem(str(self.loss[i-1])))
+            self.vrer_table.setItem(i-1, 3, QTableWidgetItem(str(vrer)))
 
     def event_analysys(self):
         for i in range(1, 47):
             row_sum = 0
             for j in range(1, 11):
                 row_sum += float(self.risk_analysys_table.item(i-1, j).text())
+            self.event_risks.append(round(row_sum / 10, 2))
             self.risk_analysys_table.setItem(i-1, 11, QTableWidgetItem(str(round(row_sum / 10, 2))))
 
     def group_result(self):
@@ -92,6 +109,9 @@ class Window(QtWidgets.QMainWindow):
         self.risk_types = ('tech', 'money', 'plan', 'manage')
         self.risks = dict.fromkeys(self.risk_types, 0)
         self.risks_probability = dict.fromkeys(self.risk_types, 0)
+        self.event_risks = []
+        self.loss = []
+        self.vrer = []
         
     def calculate(self, type_):
         for risk_type in self.risk_types:
