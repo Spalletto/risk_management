@@ -12,10 +12,6 @@ class Window(QtWidgets.QMainWindow):
         self.init_Data()
         
     def init_UI(self):
-        #self.views.setCurrentIndex(0)
-        #output.trigger.connect(self.print_to_output)
-        #self.riskSourcesWidget.calculateRiskProbability.clicked.connect(self.risk_probability)
-
         self.calculateRiskProbability.clicked.connect(self.risk_probability)
 
     def init_Data(self):
@@ -48,10 +44,6 @@ class Window(QtWidgets.QMainWindow):
         self.write_risks_table()
         self.risk_prob_table.setItem(0, 4, QTableWidgetItem(str(round(sum(self.risks_probability.values()), 2))))
         self.riskSourcesWidget.setCurrentIndex(0)
-
-    @pyqtSlot(str)
-    def print_to_output(self, text):
-        self.register_result_label.setText(text)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
