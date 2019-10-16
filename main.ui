@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>926</width>
-    <height>600</height>
+    <height>619</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -60,7 +60,7 @@
         <x>10</x>
         <y>10</y>
         <width>891</width>
-        <height>521</height>
+        <height>531</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -70,602 +70,761 @@
        <attribute name="title">
         <string>Джерела появи ризиків</string>
        </attribute>
-       <widget class="QWidget" name="layoutWidget">
+       <widget class="QStackedWidget" name="riskSourcesWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>300</y>
-          <width>861</width>
-          <height>171</height>
+          <y>0</y>
+          <width>871</width>
+          <height>501</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QGroupBox" name="groupBox_3">
-           <property name="title">
-            <string>Планові ризики</string>
-           </property>
-           <widget class="QWidget" name="layoutWidget_11">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>20</y>
-              <width>401</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_13">
-             <item>
-              <widget class="QLabel" name="label_12">
-               <property name="text">
-                <string>Наявні нереалістичніі властивості та можливості гнучкості 
-внесення змін до планів життєвого циклу розроблення ПЗ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="plan_risk1">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_12">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>50</y>
-              <width>391</width>
-              <height>54</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_14">
-             <item>
-              <widget class="QLabel" name="label_13">
-               <property name="text">
-                <string>Відсутні нереалістичні можливості порушення встановлених 
-термінів реалізації етапів життєвого циклу розроблення ПЗ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="plan_risk2">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_13">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>120</y>
-              <width>391</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_15">
-             <item>
-              <widget class="QLabel" name="label_14">
-               <property name="text">
-                <string>Присутній низький ступінь реалізму при встановленні 
-планів і етапів життєвого циклу розроблення ПЗ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="plan_risk3">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="groupBox_4">
-           <property name="title">
-            <string>Ризики реалізації та управління проектом</string>
-           </property>
-           <widget class="QWidget" name="layoutWidget_14">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>20</y>
-              <width>472</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_16">
-             <item>
-              <widget class="QLabel" name="label_15">
-               <property name="text">
-                <string>Відсутні нереалістичні стратегії реалізації програмного проекту:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="manage_risk1">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_15">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>50</y>
-              <width>507</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_17">
-             <item>
-              <widget class="QLabel" name="label_16">
-               <property name="text">
-                <string>Відсутні нереалістичні методики планування проекту розроблення ПЗ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="manage_risk2">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_16">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>80</y>
-              <width>556</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_18">
-             <item>
-              <widget class="QLabel" name="label_17">
-               <property name="text">
-                <string>Відсутніі нереалістичні методики оцінювання програмного проекту:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="manage_risk3">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_17">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>110</y>
-              <width>472</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_19">
-             <item>
-              <widget class="QLabel" name="label_18">
-               <property name="text">
-                <string>Наявне неналежне документування етапів реалізації ПЗ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="manage_risk4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_18">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>140</y>
-              <width>624</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_20">
-             <item>
-              <widget class="QLabel" name="label_19">
-               <property name="text">
-                <string>Відсутні нереалістичні методики прогнозування результатів реалізації ПЗ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="manage_risk5">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>30</y>
-          <width>641</width>
-          <height>16</height>
-         </rect>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
         </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-          <pointsize>12</pointsize>
-         </font>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
         </property>
-        <property name="text">
-         <string>Якщо у вашій специфікації вимог наявні певні недоліки, то відмітьте їх у відповідному полі</string>
+        <property name="currentIndex">
+         <number>1</number>
         </property>
-       </widget>
-       <widget class="QWidget" name="">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>70</y>
-          <width>861</width>
-          <height>221</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QGroupBox" name="groupBox">
-           <property name="title">
+        <widget class="QWidget" name="page">
+         <widget class="QTableWidget" name="risk_prob_table">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>40</y>
+            <width>231</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="autoScroll">
+           <bool>true</bool>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="textElideMode">
+           <enum>Qt::ElideMiddle</enum>
+          </property>
+          <row>
+           <property name="text">
             <string>Технічні ризики</string>
            </property>
-           <widget class="QWidget" name="layoutWidget_2">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>50</y>
-              <width>403</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
-             <item>
-              <widget class="QLabel" name="label_3">
-               <property name="text">
-                <string>Нереалістичні чи неоціненні характеристики якості ПЗ:       </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="func_risk2">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_3">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>80</y>
-              <width>424</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_5">
-             <item>
-              <widget class="QLabel" name="label_4">
-               <property name="text">
-                <string>Нереалістичні чи неоціненні характеристики надійності ПЗ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="func_risk3">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_4">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>140</y>
-              <width>401</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
-             <item>
-              <widget class="QLabel" name="label_5">
-               <property name="text">
-                <string>Нереалістичні характеристики часової продуктивності ПЗ:        </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="func_risk5">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_5">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>110</y>
-              <width>371</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_7">
-             <item>
-              <widget class="QLabel" name="label_6">
-               <property name="text">
-                <string>Нереалістичні рекомендації щодо майбутньої застосовності ПЗ:         </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="func_risk4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_6">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>170</y>
-              <width>401</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
-             <item>
-              <widget class="QLabel" name="label_7">
-               <property name="text">
-                <string>Нереалістичні рекомендації щодо майбутньої супроводжуваності ПЗ:         </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="func_risk6">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_7">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>200</y>
-              <width>416</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_9">
-             <item>
-              <widget class="QLabel" name="label_8">
-               <property name="text">
-                <string>Нереалістичні пропозиції щодо повторного використання компонент ПЗ:         </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="func_risk7">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>20</y>
-              <width>399</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
-             <item>
-              <widget class="QLabel" name="label_2">
-               <property name="text">
-                <string>Нереалістичні чи неоціненні функціональні характеристики ПЗ:                   </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="func_risk1">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="groupBox_2">
-           <property name="title">
+          </row>
+          <row>
+           <property name="text">
             <string>Вартісні ризики</string>
            </property>
-           <widget class="QWidget" name="layoutWidget_8">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>20</y>
-              <width>467</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_10">
-             <item>
-              <widget class="QLabel" name="label_9">
-               <property name="text">
-                <string>Обмеження щодо сумарного бюджету на реалізацію ПЗ:                   </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="money_risk1">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_9">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>50</y>
-              <width>399</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_11">
-             <item>
-              <widget class="QLabel" name="label_10">
-               <property name="text">
-                <string>Вказана недоступна вартість реалізації програмного проекту:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="money_risk2">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="layoutWidget_10">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>80</y>
-              <width>399</width>
-              <height>28</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_12">
-             <item>
-              <widget class="QLabel" name="label_11">
-               <property name="text">
-                <string>Присутній низький ступінь реалізму при оцінюванні витрат на ПЗ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QCheckBox" name="money_risk3">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="tristate">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-        </layout>
+          </row>
+          <row>
+           <property name="text">
+            <string>Планові ризики</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Управлінські ризики</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Загалом</string>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Ймовірність, %</string>
+           </property>
+          </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_20">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>851</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri Light</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Результати підрахунку ймовірності ризиків:</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_2">
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>851</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri Light</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Якщо наведені нижче твердження справджуються для вашої специфікації вимог, то відмітьте це у відповідному полі.
+Після завершення натисність кнопку &quot;Обрахувати ймовірність появи ризиків&quot;, щоб переглянути результати роботи.</string>
+          </property>
+         </widget>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>60</y>
+            <width>861</width>
+            <height>221</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QGroupBox" name="groupBox">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+              </font>
+             </property>
+             <property name="title">
+              <string>Технічні ризики</string>
+             </property>
+             <widget class="QWidget" name="layoutWidget_2">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>50</y>
+                <width>403</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QLabel" name="label_3">
+                 <property name="text">
+                  <string>Наявні нереалістичні чи неоціненні характеристики якості ПЗ:                                  </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="func_risk2">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_3">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>80</y>
+                <width>424</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>Наявні нереалістичні чи неоціненні характеристики надійності ПЗ:                      </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="func_risk3">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_4">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>140</y>
+                <width>401</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>Наявні нереалістичні характеристики часової продуктивності ПЗ:                           </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="func_risk5">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_5">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>110</y>
+                <width>404</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>Наявні нереалістичні рекомендації щодо майбутньої застосовності ПЗ:            </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="func_risk4">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_6">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>170</y>
+                <width>411</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <item>
+                <widget class="QLabel" name="label_7">
+                 <property name="font">
+                  <font>
+                   <family>Calibri</family>
+                   <pointsize>8</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Наявні нереалістичні рекомендації щодо майбутньої супроводжуваності ПЗ:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="func_risk6">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_7">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>200</y>
+                <width>451</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <item>
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>Наявні нереалістичні пропозиції щодо повторного використання ПЗ:                  </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="func_risk7">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>434</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>Наявні нереалістичні чи неоціненні функціональні характеристики ПЗ:             </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="func_risk1">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_2">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+              </font>
+             </property>
+             <property name="title">
+              <string>Вартісні ризики</string>
+             </property>
+             <widget class="QWidget" name="layoutWidget_8">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>467</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>Наявні обмеження щодо сумарного бюджету на реалізацію ПЗ:                                </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="money_risk1">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_9">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>50</y>
+                <width>399</width>
+                <height>21</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_11">
+               <item>
+                <widget class="QLabel" name="label_10">
+                 <property name="text">
+                  <string>Вказана недоступна вартість реалізації програмного проекту:                                   </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="money_risk2">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_10">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>80</y>
+                <width>399</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
+               <item>
+                <widget class="QLabel" name="label_11">
+                 <property name="text">
+                  <string>Присутній низький ступінь реалізму при оцінюванні витрат на ПЗ:                            </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="money_risk3">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>290</y>
+            <width>861</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QGroupBox" name="groupBox_3">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+              </font>
+             </property>
+             <property name="title">
+              <string>Планові ризики</string>
+             </property>
+             <widget class="QWidget" name="layoutWidget_11">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>401</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_13">
+               <item>
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>Наявні нереалістичніі властивості та можливості гнучкості 
+внесення змін до планів життєвого циклу розроблення ПЗ:                                         </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="plan_risk1">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_12">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>50</y>
+                <width>391</width>
+                <height>54</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_14">
+               <item>
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>Відсутні нереалістичні можливості порушення встановлених 
+термінів реалізації етапів життєвого циклу розроблення ПЗ:                                     </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="plan_risk2">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_13">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>120</y>
+                <width>391</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_15">
+               <item>
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>Присутній низький ступінь реалізму при встановленні 
+планів і етапів життєвого циклу розроблення ПЗ:                                                                </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="plan_risk3">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_4">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+              </font>
+             </property>
+             <property name="title">
+              <string>Ризики реалізації та управління проектом</string>
+             </property>
+             <widget class="QWidget" name="layoutWidget_14">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>20</y>
+                <width>472</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_16">
+               <item>
+                <widget class="QLabel" name="label_15">
+                 <property name="text">
+                  <string>Відсутні нереалістичні стратегії реалізації програмного проекту:                                  </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="manage_risk1">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_15">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>50</y>
+                <width>507</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_17">
+               <item>
+                <widget class="QLabel" name="label_16">
+                 <property name="text">
+                  <string>Відсутні нереалістичні методики планування проекту розроблення ПЗ:                     </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="manage_risk2">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_16">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>80</y>
+                <width>556</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_18">
+               <item>
+                <widget class="QLabel" name="label_17">
+                 <property name="text">
+                  <string>Відсутніі нереалістичні методики оцінювання програмного проекту:                           </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="manage_risk3">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_17">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>110</y>
+                <width>472</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_19">
+               <item>
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>Наявне неналежне документування етапів реалізації ПЗ:                                                     </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="manage_risk4">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="layoutWidget_18">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>140</y>
+                <width>624</width>
+                <height>28</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_20">
+               <item>
+                <widget class="QLabel" name="label_19">
+                 <property name="text">
+                  <string>Відсутні нереалістичні методики прогнозування результатів реалізації ПЗ:            </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="manage_risk5">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QPushButton" name="pushButton">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>470</y>
+            <width>241</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri Light</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Обрахувати ймовірність появи ризиків</string>
+          </property>
+         </widget>
+        </widget>
        </widget>
+       <zorder>riskSourcesWidget</zorder>
+       <zorder>groupBox</zorder>
+       <zorder>groupBox_2</zorder>
       </widget>
       <widget class="QWidget" name="riskEventsTab">
        <attribute name="title">
