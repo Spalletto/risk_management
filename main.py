@@ -35,14 +35,14 @@ class Window(QtWidgets.QMainWindow):
         for i in range(1, 47):
             value = round(random(), 2)
             self.loss.append(value)
-            self.risk_size_table.setItem(i-1, 1, QTableWidgetItem(str(value)))
+            self.vrer_table.setItem(i-1, 2, QTableWidgetItem(str(value)))
 
     def calculate_vrer(self):
         for i in range(1, 47):
             vrer = round(self.event_risks[i-1] * self.loss[i-1], 2)
             self.vrer.append(vrer)
+            
             self.vrer_table.setItem(i-1, 1, QTableWidgetItem(str(self.event_risks[i-1])))
-            self.vrer_table.setItem(i-1, 2, QTableWidgetItem(str(self.loss[i-1])))
             self.vrer_table.setItem(i-1, 3, QTableWidgetItem(str(vrer)))
 
     def event_analysys(self):
