@@ -25,6 +25,7 @@ class Window(QtWidgets.QMainWindow):
         self.group_result_button.clicked.connect(self.group_result)
         self.generate_loss_button.clicked.connect(self.generate_loss)
         self.calculate_vrer_button.clicked.connect(self.calculate_vrer)
+        self.risk_priority_button.clicked.connect(self.risk_priority)
 
     def generate(self):
         for i in range(1, 47):
@@ -37,12 +38,32 @@ class Window(QtWidgets.QMainWindow):
             self.loss.append(value)
             self.vrer_table.setItem(i-1, 2, QTableWidgetItem(str(value)))
 
+    def risk_priority(self):
+        min_vrer = min(self.vrer)
+        max_vrer = max(self.vrer)
+        self.min_vrer_box.setText(str(min_vrer))
+        self.max_vrer_box.setText(str(max_vrer))
+        step = round((max_vrer - min_vrer) / 3, 2)
+        low_priority_limit = round(min_vrer + step, 2)
+        middle_priority_limit = round(max_vrer - step, 2)
+        self.low_interval_box.setText(f"[{min_vrer}; {low_priority_limit})")
+        self.middle_interval_box.setText(f"[{low_priority_limit}; {middle_priority_limit})")
+        self.high_interval_box.setText(f"[{low_priority_limit}; {max_vrer}]")
+
+        for i in range(1, 47):
+            if self.vrer[i-1] < low_priority_limit:
+                priority = "НИЗЬКИЙ"
+            elif self.vrer[i-1] < middle_priority_limit:
+                priority = "СЕРЕДНІЙ"
+            else:
+                priority = "ВИСОКИЙ"
+            self.vrer_table.setItem(i-1, 4, QTableWidgetItem(priority))
+
+
     def calculate_vrer(self):
         for i in range(1, 47):
             vrer = round(self.event_risks[i-1] * self.loss[i-1], 2)
             self.vrer.append(vrer)
-            
-            self.vrer_table.setItem(i-1, 1, QTableWidgetItem(str(self.event_risks[i-1])))
             self.vrer_table.setItem(i-1, 3, QTableWidgetItem(str(vrer)))
 
     def event_analysys(self):
@@ -52,6 +73,7 @@ class Window(QtWidgets.QMainWindow):
                 row_sum += float(self.risk_analysys_table.item(i-1, j).text())
             self.event_risks.append(round(row_sum / 10, 2))
             self.risk_analysys_table.setItem(i-1, 11, QTableWidgetItem(str(round(row_sum / 10, 2))))
+            self.vrer_table.setItem(i-1, 1, QTableWidgetItem(str(round(row_sum / 10, 2))))
 
     def group_result(self):
         total_sum = 0
