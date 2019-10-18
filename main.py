@@ -164,19 +164,19 @@ class Window(QtWidgets.QMainWindow):
 
     def UI_init_tables(self):
         self.risk_analysys_table.setColumnWidth(0, 370)
+        self.risk_priority_table.setColumnWidth(0, 370)
         self.risk_analysys_table.setColumnWidth(11, 200)
+        self.risk_priority_table.setColumnWidth(1, 20)
+        self.risk_priority_table.setColumnWidth(2, 95)
+        self.risk_priority_table.setColumnWidth(3, 35)
+        self.risk_priority_table.setColumnWidth(4, 80)
         for i in range(1, EXPERT_AMOUNT + 1):
             self.risk_analysys_table.setColumnWidth(i, 20)
         
         for i in range(1, len(self.risk_events.list) + 1):
             previous_text = self.risk_analysys_table.item(i-1, 0).text()
-            self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + \
-                                                                      self.risk_events.list[i-1]))
-        
-        for i in range(1, len(self.risk_events.list) + 1):
-            previous_text = self.risk_analysys_table.item(i-1, 0).text()
-            self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + \
-                                                                      self.risk_events.list[i-1]))
+            self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
+            self.risk_priority_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
 
     def UI_init_button_handlers(self):
         self.calculateRiskProbability.clicked.connect(partial(self.risk_probability, "source"))
@@ -184,7 +184,7 @@ class Window(QtWidgets.QMainWindow):
         self.actionMain_menu.triggered.connect(self.back)
         self.generate_marks_button.clicked.connect(self.generate_expert_risk_estimates)
         self.event_analysys_button.clicked.connect(self.event_analysys)
-        self.group_result_button.clicked.connect(self.group_result)
+        self.group_result_button.clicked.connect(self.group_priority_result)
         self.generate_loss_button.clicked.connect(self.generate_loss)
         self.calculate_vrer_button.clicked.connect(self.calculate_vrer)
         self.risk_priority_button.clicked.connect(self.risk_priority)
@@ -232,43 +232,23 @@ class Window(QtWidgets.QMainWindow):
     def event_analysys(self):
         for i in range(1, len(self.risk_events.list) + 1):
             row_sum = 0
-            for j in range(1, EXPERT_AMOUNT):
+            for j in range(1, EXPERT_AMOUNT+1):
                 row_sum += float(self.risk_analysys_table.item(i-1, j).text())
             self.risk_events.expert_estimating.append(round(row_sum / EXPERT_AMOUNT, 2))
             self.risk_analysys_table.setItem(i-1, 11, QTableWidgetItem(str(round(row_sum / EXPERT_AMOUNT, 2))))
             self.risk_priority_table.setItem(i-1, 1, QTableWidgetItem(str(round(row_sum / EXPERT_AMOUNT, 2))))
 
-    def group_result(self):
-        total_sum = 0
-        group_sum = 0
-        for i in range(1, 11):
-            row_sum = float(self.risk_analysys_table.item(i-1, 11).text())
-            group_sum += row_sum
-        self.group_result_table.setItem(0, 0, QTableWidgetItem(str(round(group_sum / 46, 2))))
-        total_sum += group_sum / 46
-        
-        group_sum = 0
-        for i in range(12, 19):
-            row_sum = float(self.risk_analysys_table.item(i-1, 11).text())
-            group_sum += row_sum
-        self.group_result_table.setItem(1, 0, QTableWidgetItem(str(round(group_sum / 46, 2))))
-        total_sum += group_sum / 46
-        
-        group_sum = 0
-        for i in range(20, 30):
-            row_sum = float(self.risk_analysys_table.item(i-1, 11).text())
-            group_sum += row_sum
-        self.group_result_table.setItem(2, 0, QTableWidgetItem(str(round(group_sum / 46, 2))))
-        total_sum += group_sum / 46
+    def calculate_group_risk(self, offset, group_size, row_index):
+        group_estimates_sum = 0
+        for i in range(offset + 1, offset + group_size + 1):
+            event_estimates_sum = float(self.risk_analysys_table.item(i-1, 11).text())
+            group_estimates_sum += event_estimates_sum
 
-        group_sum = 0
-        for i in range(30, 46):
-            row_sum = float(self.risk_analysys_table.item(i-1, 11).text())
-            group_sum += row_sum
-        self.group_result_table.setItem(3, 0, QTableWidgetItem(str(round(group_sum / 46, 2))))
-        self.analysysWidget.setCurrentIndex(1)
-        total_sum += group_sum / 46
+        self.group_result_table.setItem(0, row_index, QTableWidgetItem(str(round(group_estimates_sum / len(self.risk_events.list), 2))))
 
+        return group_estimates_sum / len(self.risk_events.list)
+
+    def UI_group_priority(self, total_sum):
         self.total_result.setText(str(round(total_sum, 2)))
 
         result = "Ймовірність виникнення ризикової події є "
@@ -284,6 +264,16 @@ class Window(QtWidgets.QMainWindow):
             result += "дуже високою"
         
         self.label_result.setText(result)
+        self.analysysWidget.setCurrentIndex(1)
+
+    def group_priority_result(self):
+        total_sum = 0
+        offset = 0
+        for row_index, risk_type in enumerate(RISK_TYPES):
+            total_sum += self.calculate_group_risk(offset, len(self.risk_events.dict[risk_type]), row_index)
+            offset += len(self.risk_events.dict[risk_type])
+        
+        self.UI_group_priority(total_sum)
 
     def back(self):
         self.riskEventsWidget.setCurrentIndex(1)

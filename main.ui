@@ -30,7 +30,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <property name="iconSize">
      <size>
@@ -3668,7 +3668,7 @@ CASE-засобами розроблення ПЗ:                              
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>541</width>
+        <width>661</width>
         <height>511</height>
        </rect>
       </property>
@@ -3924,62 +3924,62 @@ CASE-засобами розроблення ПЗ:                              
       </column>
       <column>
        <property name="text">
-        <string>Пріоритет ризиків</string>
+        <string>Пріоритет</string>
        </property>
       </column>
       <item row="0" column="0">
        <property name="text">
-        <string>t1, Затримки у постачанні обладнання, необхідного для підтримки процесу розроблення ПЗ</string>
+        <string>t1</string>
        </property>
       </item>
       <item row="1" column="0">
        <property name="text">
-        <string>t2, Затримки у постачанні інструментальних засобів, необхідних для підтримки процесу розроблення ПЗ</string>
+        <string>t2</string>
        </property>
       </item>
       <item row="2" column="0">
        <property name="text">
-        <string>t3, Небажання команди виконавців ПЗ використовувати інструментальні засоби для підтримки процесу розроблення ПЗ</string>
+        <string>t3</string>
        </property>
       </item>
       <item row="3" column="0">
        <property name="text">
-        <string>t4, Відмова команди виконавців від CASE-засобів розроблення ПЗ</string>
+        <string>t4</string>
        </property>
       </item>
       <item row="4" column="0">
        <property name="text">
-        <string>t5, Формування запитів на більш потужні \nінструментальні засоби розроблення ПЗ</string>
+        <string>t5</string>
        </property>
       </item>
       <item row="5" column="0">
        <property name="text">
-        <string>t6, Недостатня продуктивність баз(и) даних для підтримки процесу розроблення ПЗ</string>
+        <string>t6</string>
        </property>
       </item>
       <item row="6" column="0">
        <property name="text">
-        <string>t7, Програмні компоненти, які використовують повторно в ПЗ, мають дефекти та обмежені функціональні можливості</string>
+        <string>t7</string>
        </property>
       </item>
       <item row="7" column="0">
        <property name="text">
-        <string>t8, Неефективність програмного коду, згенерованого CASE-засобами розроблення ПЗ</string>
+        <string>t8</string>
        </property>
       </item>
       <item row="8" column="0">
        <property name="text">
-        <string>t9, Hеможливість інтеграції CASE-засобів з іншими інструментальними засобами для підтримки процесу розроблення ПЗ</string>
+        <string>t9</string>
        </property>
       </item>
       <item row="9" column="0">
        <property name="text">
-        <string>t10, Швидкість виявлення дефектів у програмному коді є\n нижчою від раніше запланованих термінів</string>
+        <string>t10</string>
        </property>
       </item>
       <item row="10" column="0">
        <property name="text">
-        <string>t11, Поява дефектних системних компонент, які \nвикористовують для розроблення ПЗ</string>
+        <string>t11</string>
        </property>
       </item>
       <item row="11" column="0">
@@ -4200,9 +4200,9 @@ CASE-засобами розроблення ПЗ:                              
      <widget class="QWidget" name="layoutWidget_19">
       <property name="geometry">
        <rect>
-        <x>570</x>
+        <x>690</x>
         <y>20</y>
-        <width>331</width>
+        <width>211</width>
         <height>22</height>
        </rect>
       </property>
@@ -4224,7 +4224,7 @@ CASE-засобами розроблення ПЗ:                              
         <widget class="QLineEdit" name="min_vrer_box">
          <property name="maximumSize">
           <size>
-           <width>180</width>
+           <width>70</width>
            <height>16777215</height>
           </size>
          </property>
@@ -4235,9 +4235,9 @@ CASE-засобами розроблення ПЗ:                              
      <widget class="QWidget" name="layoutWidget_20">
       <property name="geometry">
        <rect>
-        <x>570</x>
+        <x>690</x>
         <y>50</y>
-        <width>331</width>
+        <width>211</width>
         <height>22</height>
        </rect>
       </property>
@@ -4259,7 +4259,7 @@ CASE-засобами розроблення ПЗ:                              
         <widget class="QLineEdit" name="max_vrer_box">
          <property name="maximumSize">
           <size>
-           <width>180</width>
+           <width>70</width>
            <height>16777215</height>
           </size>
          </property>
@@ -4270,7 +4270,7 @@ CASE-засобами розроблення ПЗ:                              
      <widget class="QLabel" name="label_52">
       <property name="geometry">
        <rect>
-        <x>570</x>
+        <x>690</x>
         <y>90</y>
         <width>221</width>
         <height>20</height>
@@ -4289,9 +4289,9 @@ CASE-засобами розроблення ПЗ:                              
      <widget class="Line" name="line">
       <property name="geometry">
        <rect>
-        <x>570</x>
+        <x>690</x>
         <y>76</y>
-        <width>331</width>
+        <width>211</width>
         <height>20</height>
        </rect>
       </property>
@@ -4302,7 +4302,7 @@ CASE-засобами розроблення ПЗ:                              
      <widget class="QWidget" name="layoutWidget_21">
       <property name="geometry">
        <rect>
-        <x>570</x>
+        <x>690</x>
         <y>150</y>
         <width>141</width>
         <height>22</height>
@@ -4342,7 +4342,7 @@ CASE-засобами розроблення ПЗ:                              
      <widget class="QWidget" name="layoutWidget_22">
       <property name="geometry">
        <rect>
-        <x>570</x>
+        <x>690</x>
         <y>180</y>
         <width>141</width>
         <height>22</height>
@@ -4382,7 +4382,7 @@ CASE-засобами розроблення ПЗ:                              
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>570</x>
+        <x>690</x>
         <y>120</y>
         <width>141</width>
         <height>22</height>
