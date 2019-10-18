@@ -143,6 +143,7 @@ class Window(QtWidgets.QMainWindow):
 
     def UI_init_tables(self):
         self.risk_analysys_table.setColumnWidth(0, 370)
+        self.risk_analysys_table.setColumnWidth(11, 200)
         for i in range(1, EXPERT_AMOUNT + 1):
             self.risk_analysys_table.setColumnWidth(i, 20)
         
