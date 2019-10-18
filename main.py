@@ -91,37 +91,70 @@ class RiskEvents:
     def risk_events_list(self):
         return self.risk_events['tech'] + self.risk_events['money'] + self.risk_events['plan'] + self.risk_events['manage'] 
 
+class RiskSources:
+    def __init__(self):
+        self.risk_sources = {
+                    "tech": (
+                                "Наявні нереалістичні чи неоціненні функціональні характеристики ПЗ",
+                                "Наявні нереалістичні чи неоціненні характеристики якості ПЗ",
+                                "Наявні нереалістичні чи неоціненні характеристики надійності ПЗ",
+                                "Наявні нереалістичні рекомендації щодо майбутньої застосовності ПЗ",
+                                "Наявні нереалістичні характеристики часової продуктивності ПЗ",
+                                "Наявні нереалістичні рекомендації щодо майбутньої супроводжуваності ПЗ",
+                                "Наявні нереалістичні пропозиції щодо повторного використання ПЗ"
+                            ),
+                    "money": (
+                                "Наявні обмеження щодо сумарного бюджету на реалізацію ПЗ",
+                                "Вказана недоступна вартість реалізації програмного проекту",
+                                "Присутній низький ступінь реалізму при оцінюванні витрат на ПЗ"
+                            ),
+                    "plan": (
+                                "Наявні нереалістичні властивості та можливості гнучкості внесення змін до планів життєвого циклу розроблення ПЗ",
+                                "Відсутні нереалістичні можливості порушення встановлених термінів реалізації етапів життєвого циклу розроблення ПЗ",
+                                "Присутній низький ступінь реалізму при встановленні планів і етапів життєвого циклу розроблення ПЗ"
+                            ),
+                    "manage":(
+                                "Наявні нереалістичні стратегії реалізації програмного проекту",
+                                "Наявні нереалістичні методики планування проекту розроблення ПЗ",
+                                "Наявні нереалістичні методики оцінювання програмного проекту",
+                                "Наявне неналежне документування етапів реалізації ПЗ",
+                                "Наявні нереалістичні методики прогнозування результатів реалізації ПЗ",
+                            )
+    }
+
+    @property
+    def risk_sources_list(self):
+        return self.risk_sources['tech'] + self.risk_sources['money'] + self.risk_sources['plan'] + self.risk_sources['manage'] 
 
 class Window(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("main.ui", self)
-        print(len(RiskEvents().risk_events_list))
         self.init_UI()
         self.init_Data()
         
     def init_UI(self):
         self.risk_analysys_table.setColumnWidth(0, 370)
-        for i in range(1, 11):
+        for i in self.risk_events_list:
             self.risk_analysys_table.setColumnWidth(i, 20)
 
         self.calculateRiskProbability.clicked.connect(self.risk_probability)
         self.calculateEventProbability.clicked.connect(self.event_probability)
         self.actionMain_menu.triggered.connect(self.back)
-        self.generate_marks_button.clicked.connect(self.generate)
+        self.generate_marks_button.clicked.connect(self.generate_expert_risk_estimates)
         self.event_analysys_button.clicked.connect(self.event_analysys)
         self.group_result_button.clicked.connect(self.group_result)
         self.generate_loss_button.clicked.connect(self.generate_loss)
         self.calculate_vrer_button.clicked.connect(self.calculate_vrer)
         self.risk_priority_button.clicked.connect(self.risk_priority)
 
-    def generate(self):
-        for i in range(1, 47):
+    def generate_expert_risk_estimates(self):
+        for i in range(1, self.risk_events_list + 1):
             for j in range(1, 11):
                 self.risk_analysys_table.setItem(i-1, j, QTableWidgetItem(str(round(random(), 2))))
     
     def generate_loss(self):
-        for i in range(1, 47):
+        for i in range(1, self.risk_events_list + 1):
             value = round(random(), 2)
             self.loss.append(value)
             self.vrer_table.setItem(i-1, 2, QTableWidgetItem(str(value)))
@@ -138,7 +171,7 @@ class Window(QtWidgets.QMainWindow):
         self.middle_interval_box.setText(f"[{low_priority_limit}; {middle_priority_limit})")
         self.high_interval_box.setText(f"[{low_priority_limit}; {max_vrer}]")
 
-        for i in range(1, 47):
+        for i in range(1, self.risk_events_list + 1):
             if self.vrer[i-1] < low_priority_limit:
                 priority = "НИЗЬКИЙ"
             elif self.vrer[i-1] < middle_priority_limit:
@@ -149,13 +182,13 @@ class Window(QtWidgets.QMainWindow):
 
 
     def calculate_vrer(self):
-        for i in range(1, 47):
+        for i in range(1, self.risk_events_list + 1):
             vrer = round(self.event_risks[i-1] * self.loss[i-1], 2)
             self.vrer.append(vrer)
             self.vrer_table.setItem(i-1, 3, QTableWidgetItem(str(vrer)))
 
     def event_analysys(self):
-        for i in range(1, 47):
+        for i in range(1, self.risk_events_list + 1):
             row_sum = 0
             for j in range(1, 11):
                 row_sum += float(self.risk_analysys_table.item(i-1, j).text())
@@ -216,6 +249,8 @@ class Window(QtWidgets.QMainWindow):
         self.analysysWidget.setCurrentIndex(0)
         
     def init_Data(self):
+        self.risk_events = RiskEvents().risk_events
+        self.risk_events_list = RiskEvents().risk_events_list
         self.risk_types = ('tech', 'money', 'plan', 'manage')
         self.risks = dict.fromkeys(self.risk_types, 0)
         self.risks_probability = dict.fromkeys(self.risk_types, 0)
