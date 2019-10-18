@@ -92,7 +92,7 @@
          <number>1</number>
         </property>
         <widget class="QWidget" name="page">
-         <widget class="QTableWidget" name="risk_prob_table">
+         <widget class="QTableWidget" name="risk_source_table">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -237,7 +237,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="tech_risk2">
+                <widget class="QCheckBox" name="tech_source2">
                  <property name="text">
                   <string/>
                  </property>
@@ -266,7 +266,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="tech_risk3">
+                <widget class="QCheckBox" name="tech_source3">
                  <property name="text">
                   <string/>
                  </property>
@@ -295,7 +295,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="tech_risk5">
+                <widget class="QCheckBox" name="tech_source5">
                  <property name="text">
                   <string/>
                  </property>
@@ -324,7 +324,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="tech_risk4">
+                <widget class="QCheckBox" name="tech_source4">
                  <property name="text">
                   <string/>
                  </property>
@@ -359,7 +359,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="tech_risk6">
+                <widget class="QCheckBox" name="tech_source6">
                  <property name="text">
                   <string/>
                  </property>
@@ -388,7 +388,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="tech_risk7">
+                <widget class="QCheckBox" name="tech_source7">
                  <property name="text">
                   <string/>
                  </property>
@@ -417,7 +417,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="tech_risk1">
+                <widget class="QCheckBox" name="tech_source1">
                  <property name="text">
                   <string/>
                  </property>
@@ -458,7 +458,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="money_risk1">
+                <widget class="QCheckBox" name="money_source1">
                  <property name="text">
                   <string/>
                  </property>
@@ -487,7 +487,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="money_risk2">
+                <widget class="QCheckBox" name="money_source2">
                  <property name="text">
                   <string/>
                  </property>
@@ -516,7 +516,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="money_risk3">
+                <widget class="QCheckBox" name="money_source3">
                  <property name="text">
                   <string/>
                  </property>
@@ -570,7 +570,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="plan_risk1">
+                <widget class="QCheckBox" name="plan_source1">
                  <property name="text">
                   <string/>
                  </property>
@@ -600,7 +600,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="plan_risk2">
+                <widget class="QCheckBox" name="plan_source2">
                  <property name="text">
                   <string/>
                  </property>
@@ -630,7 +630,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="plan_risk3">
+                <widget class="QCheckBox" name="plan_source3">
                  <property name="text">
                   <string/>
                  </property>
@@ -671,7 +671,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="manage_risk1">
+                <widget class="QCheckBox" name="manage_source1">
                  <property name="text">
                   <string/>
                  </property>
@@ -700,7 +700,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="manage_risk2">
+                <widget class="QCheckBox" name="manage_source2">
                  <property name="text">
                   <string/>
                  </property>
@@ -729,7 +729,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="manage_risk3">
+                <widget class="QCheckBox" name="manage_source3">
                  <property name="text">
                   <string/>
                  </property>
@@ -758,7 +758,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QCheckBox" name="manage_risk4">
+                <widget class="QCheckBox" name="manage_source4">
                  <property name="text">
                   <string/>
                  </property>
@@ -849,7 +849,7 @@
          <number>1</number>
         </property>
         <widget class="QWidget" name="page_3">
-         <widget class="QTableWidget" name="event_prob_table">
+         <widget class="QTableWidget" name="risk_event_table">
           <property name="geometry">
            <rect>
             <x>0</x>

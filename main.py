@@ -3,6 +3,10 @@ from PyQt5.QtCore import pyqtSignal, pyqtSlot
 from PyQt5.QtWidgets import QTableWidget,QTableWidgetItem, QCheckBox
 import sys
 from random import random
+from functools import partial
+
+EXPERT_AMOUNT = 10
+RISK_TYPES = ('tech', 'money', 'plan', 'manage')
 
 class RiskDecreasing:
     riskDecreasingEvents = (
@@ -130,16 +134,26 @@ class Window(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("main.ui", self)
-        self.init_UI()
         self.init_Data()
+        self.init_UI()
         
     def init_UI(self):
-        self.risk_analysys_table.setColumnWidth(0, 370)
-        for i in self.risk_events_list:
-            self.risk_analysys_table.setColumnWidth(i, 20)
+        self.UI_init_tables()
+        self.UI_init_button_handlers
 
-        self.calculateRiskProbability.clicked.connect(self.risk_probability)
-        self.calculateEventProbability.clicked.connect(self.event_probability)
+    def UI_init_tables(self):
+        self.risk_analysys_table.setColumnWidth(0, 370)
+        for i in range(1, EXPERT_AMOUNT + 1):
+            self.risk_analysys_table.setColumnWidth(i, 20)
+        
+        for i in range(1, len(self.risk_events_list) + 1):
+            previous_text = self.risk_analysys_table.item(i-1, 0).text()
+            self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + \
+                                                                      self.risk_events_list[i-1]))
+
+    def UI_init_button_handlers(self):
+        self.calculateRiskProbability.clicked.connect(partial(self.risk_probability, "source"))
+        self.calculateEventProbability.clicked.connect(partial(self.risk_probability, "event"))
         self.actionMain_menu.triggered.connect(self.back)
         self.generate_marks_button.clicked.connect(self.generate_expert_risk_estimates)
         self.event_analysys_button.clicked.connect(self.event_analysys)
@@ -149,12 +163,12 @@ class Window(QtWidgets.QMainWindow):
         self.risk_priority_button.clicked.connect(self.risk_priority)
 
     def generate_expert_risk_estimates(self):
-        for i in range(1, self.risk_events_list + 1):
-            for j in range(1, 11):
+        for i in range(1, len(self.risk_events_list) + 1):
+            for j in range(1, EXPERT_AMOUNT+1):
                 self.risk_analysys_table.setItem(i-1, j, QTableWidgetItem(str(round(random(), 2))))
     
     def generate_loss(self):
-        for i in range(1, self.risk_events_list + 1):
+        for i in range(1, len(self.risk_events_list) + 1):
             value = round(random(), 2)
             self.loss.append(value)
             self.vrer_table.setItem(i-1, 2, QTableWidgetItem(str(value)))
@@ -171,7 +185,7 @@ class Window(QtWidgets.QMainWindow):
         self.middle_interval_box.setText(f"[{low_priority_limit}; {middle_priority_limit})")
         self.high_interval_box.setText(f"[{low_priority_limit}; {max_vrer}]")
 
-        for i in range(1, self.risk_events_list + 1):
+        for i in range(1, len(self.risk_events_list) + 1):
             if self.vrer[i-1] < low_priority_limit:
                 priority = "НИЗЬКИЙ"
             elif self.vrer[i-1] < middle_priority_limit:
@@ -182,13 +196,13 @@ class Window(QtWidgets.QMainWindow):
 
 
     def calculate_vrer(self):
-        for i in range(1, self.risk_events_list + 1):
+        for i in range(1, len(self.risk_events_list) + 1):
             vrer = round(self.event_risks[i-1] * self.loss[i-1], 2)
             self.vrer.append(vrer)
             self.vrer_table.setItem(i-1, 3, QTableWidgetItem(str(vrer)))
 
     def event_analysys(self):
-        for i in range(1, self.risk_events_list + 1):
+        for i in range(1, len(self.risk_events_list) + 1):
             row_sum = 0
             for j in range(1, 11):
                 row_sum += float(self.risk_analysys_table.item(i-1, j).text())
@@ -251,48 +265,57 @@ class Window(QtWidgets.QMainWindow):
     def init_Data(self):
         self.risk_events = RiskEvents().risk_events
         self.risk_events_list = RiskEvents().risk_events_list
-        self.risk_types = ('tech', 'money', 'plan', 'manage')
-        self.risks = dict.fromkeys(self.risk_types, 0)
-        self.risks_probability = dict.fromkeys(self.risk_types, 0)
+        self.risk_sources = RiskSources().risk_sources
+        self.risk_sources_list = RiskSources().risk_sources_list
+        
         self.event_risks = []
         self.loss = []
         self.vrer = []
         
-    def calculate(self, type_):
-        for risk_type in self.risk_types:
+    def calculate_checked_box(self, type_):
+        risks = dict.fromkeys(RISK_TYPES, 0)
+        for risk_type in RISK_TYPES:
             number = 1
             checkbox = self.findChild(QCheckBox, f"{risk_type}_{type_}{number}")
             while checkbox:
                 if checkbox.isChecked():
-                    self.risks[risk_type] += 1
+                    risks[risk_type] += 1
                 number += 1
                 checkbox = self.findChild(QCheckBox, f"{risk_type}_{type_}{number}")
+        return risks
 
-    def calculate_probability(self, amount):
-        for risk_type in self.risk_types:
-            self.risks_probability[risk_type] = (self.risks[risk_type] / amount) * 100
+    def calculate_probability(self, amount, risks):
+        probabilities = dict.fromkeys(RISK_TYPES, 0)
+        for risk_type in RISK_TYPES:
+            probabilities[risk_type] = round((risks[risk_type] / amount) * 100, 2)
+        return probabilities
     
-    def write_risks_table(self, table):
-        for index, risk_type in enumerate(self.risk_types):
-            table.setItem(0, index, QTableWidgetItem(str(round(self.risks_probability[risk_type], 2))))
+    def UI_write_table(self, table, col, row, value):
+        table.setItem(col, row, QTableWidgetItem(str(value)))
 
-    def risk_probability(self):
-        self.calculate('risk')
-        self.calculate_probability(18)
-        table = self.risk_prob_table
-        self.write_risks_table(table)
-        table.setItem(0, 4, QTableWidgetItem(str(round(sum(self.risks_probability.values()), 2))))
-        self.init_Data()
-        self.riskSourcesWidget.setCurrentIndex(0)
+    def UI_probabilities_to_table(self, type_, probabilities):
+        table = self.findChild(QTableWidget, f"risk_{type_}_table")
+        for index, risk_type in enumerate(RISK_TYPES):
+            self.UI_write_table(table, 0, index, probabilities[risk_type])
+        self.UI_write_table(table, 0, 4, sum(probabilities.values()))
+    
+    def UI_set_risk_page(self, type_):
+        if type_ == "source":
+            self.riskSourcesWidget.setCurrentIndex(0)
+        elif type_ == "event":
+            self.riskEventsWidget.setCurrentIndex(0)
 
-    def event_probability(self):
-        self.calculate('event')
-        self.calculate_probability(46)
-        table = self.event_prob_table
-        self.write_risks_table(table)
-        table.setItem(0, 4, QTableWidgetItem(str(round(sum(self.risks_probability.values()), 2))))
-        self.init_Data()
-        self.riskEventsWidget.setCurrentIndex(0)
+    def risk_probability(self, type_):
+        if type_ == "source":
+            risk_count = len(self.risk_sources_list)
+        elif type_ == "event":
+            risk_count = len(self.risk_events_list)
+
+        risks = self.calculate_checked_box(type_)
+        probabilities = self.calculate_probability(risk_count, risks)
+        
+        self.UI_probabilities_to_table(type_, probabilities)
+        self.UI_set_risk_page(type_)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
