@@ -30,7 +30,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="iconSize">
      <size>
@@ -3663,7 +3663,7 @@ CASE-засобами розроблення ПЗ:                              
      <attribute name="title">
       <string>Величина ризику</string>
      </attribute>
-     <widget class="QTableWidget" name="vrer_table">
+     <widget class="QTableWidget" name="risk_priority_table">
       <property name="geometry">
        <rect>
         <x>10</x>

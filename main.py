@@ -33,7 +33,7 @@ class RiskDecreasing:
 
 class RiskEvents:
     def __init__(self):
-        self.risk_events = {
+        self.dict = {
                     "tech": (
                                 "Затримки у постачанні обладнання, необхідного для підтримки процесу розроблення ПЗ",
                                 "Затримки у постачанні інструментальних засобів, необхідних для підтримки процесу розроблення ПЗ",
@@ -90,14 +90,35 @@ class RiskEvents:
                                 "Зміна пріоритетів у процесі управління програмним проекто",
                             )
     }
+        self.vrer = []
+        self.loss = []
+        self.expert_estimating = []
 
     @property
-    def risk_events_list(self):
-        return self.risk_events['tech'] + self.risk_events['money'] + self.risk_events['plan'] + self.risk_events['manage'] 
+    def list(self):
+        return self.dict['tech'] + self.dict['money'] + self.dict['plan'] + self.dict['manage'] 
+
+    @property
+    def min_vrer(self):
+        return min(self.vrer)
+
+    @property
+    def max_vrer(self):
+        return max(self.vrer)
+
+    @property
+    def vrer_step(self):
+        return round((self.max_vrer - self.min_vrer) / 3, 2)
+    @property
+    def low_priority_limit(self):
+        return round(self.min_vrer + self.vrer_step, 2)
+    @property
+    def middle_priority_limit(self):
+        return round(self.max_vrer - self.vrer_step, 2)
 
 class RiskSources:
     def __init__(self):
-        self.risk_sources = {
+        self.dict = {
                     "tech": (
                                 "Наявні нереалістичні чи неоціненні функціональні характеристики ПЗ",
                                 "Наявні нереалістичні чи неоціненні характеристики якості ПЗ",
@@ -127,8 +148,8 @@ class RiskSources:
     }
 
     @property
-    def risk_sources_list(self):
-        return self.risk_sources['tech'] + self.risk_sources['money'] + self.risk_sources['plan'] + self.risk_sources['manage'] 
+    def list(self):
+        return self.dict['tech'] + self.dict['money'] + self.dict['plan'] + self.dict['manage'] 
 
 class Window(QtWidgets.QMainWindow):
     def __init__(self):
@@ -139,7 +160,7 @@ class Window(QtWidgets.QMainWindow):
         
     def init_UI(self):
         self.UI_init_tables()
-        self.UI_init_button_handlers
+        self.UI_init_button_handlers()
 
     def UI_init_tables(self):
         self.risk_analysys_table.setColumnWidth(0, 370)
@@ -147,10 +168,15 @@ class Window(QtWidgets.QMainWindow):
         for i in range(1, EXPERT_AMOUNT + 1):
             self.risk_analysys_table.setColumnWidth(i, 20)
         
-        for i in range(1, len(self.risk_events_list) + 1):
+        for i in range(1, len(self.risk_events.list) + 1):
             previous_text = self.risk_analysys_table.item(i-1, 0).text()
             self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + \
-                                                                      self.risk_events_list[i-1]))
+                                                                      self.risk_events.list[i-1]))
+        
+        for i in range(1, len(self.risk_events.list) + 1):
+            previous_text = self.risk_analysys_table.item(i-1, 0).text()
+            self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + \
+                                                                      self.risk_events.list[i-1]))
 
     def UI_init_button_handlers(self):
         self.calculateRiskProbability.clicked.connect(partial(self.risk_probability, "source"))
@@ -164,52 +190,53 @@ class Window(QtWidgets.QMainWindow):
         self.risk_priority_button.clicked.connect(self.risk_priority)
 
     def generate_expert_risk_estimates(self):
-        for i in range(1, len(self.risk_events_list) + 1):
+        for i in range(1, len(self.risk_events.list) + 1):
             for j in range(1, EXPERT_AMOUNT+1):
                 self.risk_analysys_table.setItem(i-1, j, QTableWidgetItem(str(round(random(), 2))))
     
     def generate_loss(self):
-        for i in range(1, len(self.risk_events_list) + 1):
+        for i in range(1, len(self.risk_events.list) + 1):
             value = round(random(), 2)
-            self.loss.append(value)
-            self.vrer_table.setItem(i-1, 2, QTableWidgetItem(str(value)))
+            self.risk_events.loss.append(value)
+            self.risk_priority_table.setItem(i-1, 2, QTableWidgetItem(str(value)))
+
+    def UI_init_vrer_page(self):
+        self.min_vrer_box.setText(str(self.risk_events.min_vrer))
+        self.max_vrer_box.setText(str(self.risk_events.max_vrer))
+
+        self.low_interval_box.setText(f"[{self.risk_events.min_vrer}; {self.risk_events.low_priority_limit})")
+        self.middle_interval_box.setText(f"[{self.risk_events.low_priority_limit}; {self.risk_events.middle_priority_limit})")
+        self.high_interval_box.setText(f"[{self.risk_events.low_priority_limit}; {self.risk_events.max_vrer}]")
 
     def risk_priority(self):
-        min_vrer = min(self.vrer)
-        max_vrer = max(self.vrer)
-        self.min_vrer_box.setText(str(min_vrer))
-        self.max_vrer_box.setText(str(max_vrer))
-        step = round((max_vrer - min_vrer) / 3, 2)
-        low_priority_limit = round(min_vrer + step, 2)
-        middle_priority_limit = round(max_vrer - step, 2)
-        self.low_interval_box.setText(f"[{min_vrer}; {low_priority_limit})")
-        self.middle_interval_box.setText(f"[{low_priority_limit}; {middle_priority_limit})")
-        self.high_interval_box.setText(f"[{low_priority_limit}; {max_vrer}]")
+        self.UI_init_vrer_page()
 
-        for i in range(1, len(self.risk_events_list) + 1):
-            if self.vrer[i-1] < low_priority_limit:
+        for i in range(1, len(self.risk_events.list) + 1):
+            if self.risk_events.vrer[i-1] < self.risk_events.low_priority_limit:
                 priority = "НИЗЬКИЙ"
-            elif self.vrer[i-1] < middle_priority_limit:
+            elif self.risk_events.vrer[i-1] < self.risk_events.middle_priority_limit:
                 priority = "СЕРЕДНІЙ"
             else:
                 priority = "ВИСОКИЙ"
-            self.vrer_table.setItem(i-1, 4, QTableWidgetItem(priority))
+
+            self.risk_priority_table.setItem(i-1, 4, QTableWidgetItem(priority))
 
 
     def calculate_vrer(self):
-        for i in range(1, len(self.risk_events_list) + 1):
-            vrer = round(self.event_risks[i-1] * self.loss[i-1], 2)
-            self.vrer.append(vrer)
-            self.vrer_table.setItem(i-1, 3, QTableWidgetItem(str(vrer)))
+        for i in range(1, len(self.risk_events.list) + 1):
+            vrer = round(self.risk_events.expert_estimating[i-1] * self.risk_events.loss[i-1], 2)
+            self.risk_events.vrer.append(vrer)
+
+            self.risk_priority_table.setItem(i-1, 3, QTableWidgetItem(str(vrer)))
 
     def event_analysys(self):
-        for i in range(1, len(self.risk_events_list) + 1):
+        for i in range(1, len(self.risk_events.list) + 1):
             row_sum = 0
-            for j in range(1, 11):
+            for j in range(1, EXPERT_AMOUNT):
                 row_sum += float(self.risk_analysys_table.item(i-1, j).text())
-            self.event_risks.append(round(row_sum / 10, 2))
-            self.risk_analysys_table.setItem(i-1, 11, QTableWidgetItem(str(round(row_sum / 10, 2))))
-            self.vrer_table.setItem(i-1, 1, QTableWidgetItem(str(round(row_sum / 10, 2))))
+            self.risk_events.expert_estimating.append(round(row_sum / EXPERT_AMOUNT, 2))
+            self.risk_analysys_table.setItem(i-1, 11, QTableWidgetItem(str(round(row_sum / EXPERT_AMOUNT, 2))))
+            self.risk_priority_table.setItem(i-1, 1, QTableWidgetItem(str(round(row_sum / EXPERT_AMOUNT, 2))))
 
     def group_result(self):
         total_sum = 0
@@ -264,14 +291,8 @@ class Window(QtWidgets.QMainWindow):
         self.analysysWidget.setCurrentIndex(0)
         
     def init_Data(self):
-        self.risk_events = RiskEvents().risk_events
-        self.risk_events_list = RiskEvents().risk_events_list
-        self.risk_sources = RiskSources().risk_sources
-        self.risk_sources_list = RiskSources().risk_sources_list
-        
-        self.event_risks = []
-        self.loss = []
-        self.vrer = []
+        self.risk_events = RiskEvents()
+        self.risk_sources = RiskSources()
         
     def calculate_checked_box(self, type_):
         risks = dict.fromkeys(RISK_TYPES, 0)
@@ -308,9 +329,9 @@ class Window(QtWidgets.QMainWindow):
 
     def risk_probability(self, type_):
         if type_ == "source":
-            risk_count = len(self.risk_sources_list)
+            risk_count = len(self.risk_sources.list)
         elif type_ == "event":
-            risk_count = len(self.risk_events_list)
+            risk_count = len(self.risk_events.list)
 
         risks = self.calculate_checked_box(type_)
         probabilities = self.calculate_probability(risk_count, risks)
