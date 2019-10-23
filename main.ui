@@ -30,7 +30,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>4</number>
     </property>
     <property name="iconSize">
      <size>
@@ -67,7 +67,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="riskSourcesTab">
        <attribute name="title">
@@ -175,6 +175,19 @@
           </property>
           <property name="text">
            <string>Результати підрахунку ймовірності ризиків:</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="risk_source_back_button">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>480</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Back</string>
           </property>
          </widget>
         </widget>
@@ -932,6 +945,19 @@
           </property>
           <property name="text">
            <string>Результати підрахунку ймовірності ризиків:</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="risk_event_back_button">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>480</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Back</string>
           </property>
          </widget>
         </widget>
@@ -2930,7 +2956,7 @@ CASE-засобами розроблення ПЗ:                              
         <x>0</x>
         <y>0</y>
         <width>911</width>
-        <height>531</height>
+        <height>561</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -3502,6 +3528,45 @@ CASE-засобами розроблення ПЗ:                              
          <string> Ймовірності настання ризикових подій, встановлені експертами</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="group_result_button">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>530</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Результати по групах</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="event_analysys_button">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>530</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Знайти ймовірність події</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="generate_marks_button">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>530</y>
+          <width>111</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Згенерувати оцінки</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_6">
        <widget class="QTableWidget" name="group_result_table">
@@ -3617,46 +3682,20 @@ CASE-засобами розроблення ПЗ:                              
          </item>
         </layout>
        </widget>
+       <widget class="QPushButton" name="risk_analysys_back_button">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>530</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
       </widget>
-     </widget>
-     <widget class="QPushButton" name="generate_marks_button">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>530</y>
-        <width>111</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Згенерувати оцінки</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="event_analysys_button">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>530</y>
-        <width>141</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Знайти ймовірність події</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="group_result_button">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>530</y>
-        <width>141</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Результати по групах</string>
-      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
@@ -4434,7 +4473,7 @@ CASE-засобами розроблення ПЗ:                              
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_7">
        <widget class="QLabel" name="label_193">
@@ -6924,7 +6963,7 @@ CASE-засобами розроблення ПЗ:                              
           <x>10</x>
           <y>30</y>
           <width>881</width>
-          <height>511</height>
+          <height>481</height>
          </rect>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -7416,6 +7455,19 @@ CASE-засобами розроблення ПЗ:                              
          </property>
         </item>
        </widget>
+       <widget class="QPushButton" name="risk_solution_back_button">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>510</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </widget>
@@ -7429,11 +7481,11 @@ CASE-засобами розроблення ПЗ:                              
         <x>0</x>
         <y>0</y>
         <width>911</width>
-        <height>531</height>
+        <height>561</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_19">
        <widget class="QTableWidget" name="risk_monitoring_table">
@@ -8001,6 +8053,45 @@ CASE-засобами розроблення ПЗ:                              
          <string> Ймовірності настання ризикових подій, після проведення заходів щодо зменшення або усунення ризиків</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="group_result_button2">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>530</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Результати по групах</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="event_analysys_button2">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>530</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Знайти ймовірність події</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="generate_marks_button2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>530</y>
+          <width>111</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Згенерувати оцінки</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_20">
        <widget class="QTableWidget" name="group_result_table2">
@@ -8116,46 +8207,20 @@ CASE-засобами розроблення ПЗ:                              
          </item>
         </layout>
        </widget>
+       <widget class="QPushButton" name="risk_analysys_back_button2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>520</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
       </widget>
-     </widget>
-     <widget class="QPushButton" name="group_result_button2">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>530</y>
-        <width>141</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Результати по групах</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="generate_marks_button2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>530</y>
-        <width>111</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Згенерувати оцінки</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="event_analysys_button2">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>530</y>
-        <width>141</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Знайти ймовірність події</string>
-      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_16">

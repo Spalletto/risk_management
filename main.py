@@ -246,6 +246,27 @@ class Window(QtWidgets.QMainWindow):
         # risk solution page
         self.show_risk_decrease_table_button.clicked.connect(self.UI_solution_box_to_table)
 
+        self.risk_source_back_button.clicked.connect(self.UI_risk_source_back)
+        self.risk_event_back_button.clicked.connect(self.UI_risk_event_back)
+        self.risk_analysys_back_button.clicked.connect(self.UI_risk_analysys_back)
+        self.risk_analysys_back_button2.clicked.connect(self.UI_risk_analysys_back2)
+        self.risk_solution_back_button.clicked.connect(self.UI_risk_solution_back)
+
+    def UI_risk_source_back(self):
+        self.riskSourcesWidget.setCurrentIndex(1)
+    
+    def UI_risk_event_back(self):
+        self.riskEventsWidget.setCurrentIndex(1)
+    
+    def UI_risk_analysys_back(self):
+        self.analysysWidget.setCurrentIndex(0)
+    
+    def UI_risk_analysys_back2(self):
+        self.monitoringWidget.setCurrentIndex(0)
+
+    def UI_risk_solution_back(self):
+        self.riskSolutionWidget.setCurrentIndex(0)
+
     def UI_solution_box_to_table(self):
         for i in range(len(self.risk_events.list)):
             combobox = self.findChild(QComboBox, f"riskSolutionBox{i+1}")
@@ -349,7 +370,8 @@ class Window(QtWidgets.QMainWindow):
         elif type_ == "monitoring":
             loss = self.risk_events.loss2
             table = self.risk_priority_table2
-            
+        
+        loss.clear()
         for i in range(len(self.risk_events.list)):
             value = round(random(), 2)
             loss.append(value)
@@ -391,6 +413,7 @@ class Window(QtWidgets.QMainWindow):
             loss = self.risk_events.loss2
             vrer_list = self.risk_events.vrer2
 
+        vrer_list.clear()
         for i in range(len(self.risk_events.list)):
             vrer = round(expert_marks[i] * loss[i], 2)
             vrer_list.append(vrer)
@@ -407,6 +430,7 @@ class Window(QtWidgets.QMainWindow):
             result_table = self.risk_priority_table2
             expert_marks = self.risk_events.expert_monitoring
 
+        expert_marks.clear()
         for i in range(len(self.risk_events.list)):
             row_sum = 0
             for j in range(1, EXPERT_AMOUNT+1):
