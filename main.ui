@@ -30,7 +30,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <property name="iconSize">
      <size>
@@ -1406,7 +1406,7 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-456</y>
+             <y>0</y>
              <width>854</width>
              <height>956</height>
             </rect>
@@ -3894,7 +3894,7 @@ CASE-засобами розроблення ПЗ:                              
       </row>
       <row>
        <property name="text">
-        <string>4</string>
+        <string>45</string>
        </property>
       </row>
       <row>
@@ -4475,9 +4475,9 @@ CASE-засобами розроблення ПЗ:                              
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>0</y>
+           <y>-1124</y>
            <width>862</width>
-           <height>1530</height>
+           <height>1563</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
@@ -4485,6 +4485,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_24">
             <item>
              <widget class="QLabel" name="riskLabel1">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4530,6 +4536,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_65">
             <item>
              <widget class="QLabel" name="riskLabel2">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4575,6 +4587,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_64">
             <item>
              <widget class="QLabel" name="riskLabel3">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4620,6 +4638,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_63">
             <item>
              <widget class="QLabel" name="riskLabel4">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4665,6 +4689,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_62">
             <item>
              <widget class="QLabel" name="riskLabel5">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4710,6 +4740,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_61">
             <item>
              <widget class="QLabel" name="riskLabel6">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4755,6 +4791,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_28">
             <item>
              <widget class="QLabel" name="riskLabel7">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4800,6 +4842,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_29">
             <item>
              <widget class="QLabel" name="riskLabel8">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4845,6 +4893,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_30">
             <item>
              <widget class="QLabel" name="riskLabel9">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4890,6 +4944,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_31">
             <item>
              <widget class="QLabel" name="riskLabel10">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4935,6 +4995,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_32">
             <item>
              <widget class="QLabel" name="riskLabel11">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -4980,6 +5046,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_33">
             <item>
              <widget class="QLabel" name="riskLabel12">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5025,6 +5097,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_37">
             <item>
              <widget class="QLabel" name="riskLabel13">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5070,6 +5148,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_35">
             <item>
              <widget class="QLabel" name="riskLabel14">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5115,6 +5199,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_38">
             <item>
              <widget class="QLabel" name="riskLabel15">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5160,6 +5250,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_39">
             <item>
              <widget class="QLabel" name="riskLabel16">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5205,6 +5301,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_40">
             <item>
              <widget class="QLabel" name="riskLabel17">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5250,6 +5352,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_41">
             <item>
              <widget class="QLabel" name="riskLabel18">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5295,6 +5403,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_42">
             <item>
              <widget class="QLabel" name="riskLabel19">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5340,6 +5454,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_43">
             <item>
              <widget class="QLabel" name="riskLabel20">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5385,6 +5505,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_44">
             <item>
              <widget class="QLabel" name="riskLabel21">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5430,6 +5556,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_45">
             <item>
              <widget class="QLabel" name="riskLabel22">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5475,6 +5607,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_47">
             <item>
              <widget class="QLabel" name="riskLabel23">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5520,6 +5658,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_46">
             <item>
              <widget class="QLabel" name="riskLabel24">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5565,6 +5709,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_53">
             <item>
              <widget class="QLabel" name="riskLabel25">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5610,6 +5760,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_49">
             <item>
              <widget class="QLabel" name="riskLabel26">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5655,6 +5811,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_54">
             <item>
              <widget class="QLabel" name="riskLabel27">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5700,6 +5862,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_59">
             <item>
              <widget class="QLabel" name="riskLabel28">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5745,6 +5913,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_55">
             <item>
              <widget class="QLabel" name="riskLabel29">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5790,6 +5964,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_58">
             <item>
              <widget class="QLabel" name="riskLabel30">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5835,6 +6015,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_57">
             <item>
              <widget class="QLabel" name="riskLabel31">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5880,6 +6066,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_60">
             <item>
              <widget class="QLabel" name="riskLabel32">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5925,6 +6117,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_56">
             <item>
              <widget class="QLabel" name="riskLabel33">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -5970,6 +6168,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_66">
             <item>
              <widget class="QLabel" name="riskLabel34">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6015,6 +6219,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_69">
             <item>
              <widget class="QLabel" name="riskLabel35">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6060,6 +6270,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_68">
             <item>
              <widget class="QLabel" name="riskLabel36">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6105,6 +6321,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_67">
             <item>
              <widget class="QLabel" name="riskLabel37">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6150,6 +6372,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_72">
             <item>
              <widget class="QLabel" name="riskLabel38">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6195,6 +6423,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_71">
             <item>
              <widget class="QLabel" name="riskLabel39">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6240,6 +6474,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_70">
             <item>
              <widget class="QLabel" name="riskLabel40">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6285,6 +6525,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_77">
             <item>
              <widget class="QLabel" name="riskLabel41">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6330,6 +6576,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_76">
             <item>
              <widget class="QLabel" name="riskLabel42">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6375,6 +6627,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_75">
             <item>
              <widget class="QLabel" name="riskLabel43">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6420,6 +6678,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_74">
             <item>
              <widget class="QLabel" name="riskLabel44">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6465,6 +6729,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_73">
             <item>
              <widget class="QLabel" name="riskLabel45">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6510,6 +6780,12 @@ CASE-засобами розроблення ПЗ:                              
            <layout class="QHBoxLayout" name="horizontalLayout_48">
             <item>
              <widget class="QLabel" name="riskLabel46">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>400</width>
@@ -6540,7 +6816,58 @@ CASE-засобами розроблення ПЗ:                              
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="riskSolutionBox">
+             <widget class="QComboBox" name="riskSolutionBox46">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_78">
+            <item>
+             <widget class="QLabel" name="riskLabel47">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>400</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>47.</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="riskSolutionBox47">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -6573,23 +6900,7 @@ CASE-засобами розроблення ПЗ:                              
       </widget>
       <widget class="QWidget" name="page_8"/>
      </widget>
-     <zorder>stackedWidget</zorder>
-     <zorder>riskLabel1</zorder>
-     <zorder>riskSolutionBox1</zorder>
     </widget>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>580</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

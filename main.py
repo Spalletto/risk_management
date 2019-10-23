@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, uic, QtWidgets
 from PyQt5.QtCore import pyqtSignal, pyqtSlot
-from PyQt5.QtWidgets import QTableWidget,QTableWidgetItem, QCheckBox
+from PyQt5.QtWidgets import QTableWidget,QTableWidgetItem, QCheckBox, QComboBox, QLabel
 import sys
 from random import random
 from functools import partial
@@ -87,7 +87,7 @@ class RiskEvents:
                                 "Hедостатнє документування результатів на етапах реалізації програмного проекту",
                                 "Hереалістичне прогнозування результатів на етапах реалізації програмного проекту",
                                 "Hедостатній професійний рівень представників від компанії-замовника ПЗ",
-                                "Зміна пріоритетів у процесі управління програмним проекто",
+                                "Зміна пріоритетів у процесі управління програмним проектом",
                             )
     }
         self.vrer = []
@@ -161,6 +161,7 @@ class Window(QtWidgets.QMainWindow):
     def init_UI(self):
         self.UI_init_tables()
         self.UI_init_button_handlers()
+        self.UI_set_risk_solution_comboboxes()
 
     def UI_init_tables(self):
         self.risk_analysys_table.setColumnWidth(0, 370)
@@ -316,6 +317,13 @@ class Window(QtWidgets.QMainWindow):
             self.riskSourcesWidget.setCurrentIndex(0)
         elif type_ == "event":
             self.riskEventsWidget.setCurrentIndex(0)
+
+    def UI_set_risk_solution_comboboxes(self):
+        for i, v in enumerate(self.risk_events.list):
+            combobox = self.findChild(QComboBox, f"riskSolutionBox{i+1}")
+            combobox.addItems(RiskDecreasing.riskDecreasingEvents)
+            label = self.findChild(QLabel, f"riskLabel{i+1}")
+            label.setText(label.text() + ' ' + v)
 
     def risk_probability(self, type_):
         if type_ == "source":
