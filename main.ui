@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>926</width>
-    <height>619</height>
+    <width>920</width>
+    <height>590</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <property name="iconSize">
      <size>
@@ -67,7 +67,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="riskSourcesTab">
        <attribute name="title">
@@ -2960,7 +2960,7 @@ CASE-засобами розроблення ПЗ:                              
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_5">
        <widget class="QTableWidget" name="risk_analysys_table">
@@ -4240,7 +4240,7 @@ CASE-засобами розроблення ПЗ:                              
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>20</y>
+        <y>10</y>
         <width>211</width>
         <height>22</height>
        </rect>
@@ -4261,9 +4261,15 @@ CASE-засобами розроблення ПЗ:                              
        </item>
        <item>
         <widget class="QLineEdit" name="min_vrer_box">
+         <property name="minimumSize">
+          <size>
+           <width>65</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>70</width>
+           <width>65</width>
            <height>16777215</height>
           </size>
          </property>
@@ -4275,7 +4281,7 @@ CASE-засобами розроблення ПЗ:                              
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>50</y>
+        <y>40</y>
         <width>211</width>
         <height>22</height>
        </rect>
@@ -4296,9 +4302,15 @@ CASE-засобами розроблення ПЗ:                              
        </item>
        <item>
         <widget class="QLineEdit" name="max_vrer_box">
+         <property name="minimumSize">
+          <size>
+           <width>65</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>70</width>
+           <width>65</width>
            <height>16777215</height>
           </size>
          </property>
@@ -4310,7 +4322,7 @@ CASE-засобами розроблення ПЗ:                              
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>90</y>
+        <y>80</y>
         <width>221</width>
         <height>20</height>
        </rect>
@@ -4329,9 +4341,9 @@ CASE-засобами розроблення ПЗ:                              
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>76</y>
+        <y>60</y>
         <width>211</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="orientation">
@@ -4342,7 +4354,7 @@ CASE-засобами розроблення ПЗ:                              
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>150</y>
+        <y>140</y>
         <width>141</width>
         <height>22</height>
        </rect>
@@ -4382,7 +4394,7 @@ CASE-засобами розроблення ПЗ:                              
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>180</y>
+        <y>170</y>
         <width>141</width>
         <height>22</height>
        </rect>
@@ -4422,7 +4434,7 @@ CASE-засобами розроблення ПЗ:                              
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>120</y>
+        <y>110</y>
         <width>141</width>
         <height>22</height>
        </rect>
@@ -4473,14 +4485,14 @@ CASE-засобами розроблення ПЗ:                              
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_7">
        <widget class="QLabel" name="label_193">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>10</y>
+          <y>0</y>
           <width>834</width>
           <height>38</height>
          </rect>
@@ -4499,9 +4511,9 @@ CASE-засобами розроблення ПЗ:                              
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>60</y>
+          <y>40</y>
           <width>881</width>
-          <height>441</height>
+          <height>461</height>
          </rect>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -4514,7 +4526,7 @@ CASE-засобами розроблення ПЗ:                              
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>-1124</y>
+           <y>-1104</y>
            <width>862</width>
            <height>1563</height>
           </rect>
@@ -7485,7 +7497,7 @@ CASE-засобами розроблення ПЗ:                              
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_19">
        <widget class="QTableWidget" name="risk_monitoring_table">
@@ -8211,7 +8223,7 @@ CASE-засобами розроблення ПЗ:                              
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>520</y>
+          <y>530</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -8805,9 +8817,15 @@ CASE-засобами розроблення ПЗ:                              
        </item>
        <item>
         <widget class="QLineEdit" name="min_evrer_box">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>70</width>
+           <width>60</width>
            <height>16777215</height>
           </size>
          </property>
@@ -8920,9 +8938,15 @@ CASE-засобами розроблення ПЗ:                              
        </item>
        <item>
         <widget class="QLineEdit" name="max_evrer_box">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>70</width>
+           <width>60</width>
            <height>16777215</height>
           </size>
          </property>
@@ -8986,24 +9010,6 @@ CASE-засобами розроблення ПЗ:                              
     </widget>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>926</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuMain">
-    <property name="title">
-     <string>Main</string>
-    </property>
-    <addaction name="actionMain_menu"/>
-   </widget>
-   <addaction name="menuMain"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionMain_menu">
    <property name="text">
     <string>Main menu</string>

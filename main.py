@@ -221,7 +221,6 @@ class Window(QtWidgets.QMainWindow):
     def UI_init_button_handlers(self):
         self.calculateRiskProbability.clicked.connect(partial(self.risk_probability, "source"))
         self.calculateEventProbability.clicked.connect(partial(self.risk_probability, "event"))
-        self.actionMain_menu.triggered.connect(self.back)
         
         # risk analysys page
         self.generate_marks_button.clicked.connect(partial(self.generate_expert_risk_estimates, "analysys"))
@@ -468,12 +467,7 @@ class Window(QtWidgets.QMainWindow):
             offset += len(self.risk_events.dict[risk_type])
         
         self.UI_group_priority(total_sum, result_label, result_status_label)
-
-    def back(self):
-        self.riskEventsWidget.setCurrentIndex(1)
-        self.riskSourcesWidget.setCurrentIndex(1)
-        self.analysysWidget.setCurrentIndex(0)
-                
+        
     def calculate_checked_box(self, type_):
         risks = dict.fromkeys(RISK_TYPES, 0)
         for risk_type in RISK_TYPES:
