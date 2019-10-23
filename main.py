@@ -178,6 +178,7 @@ class Window(QtWidgets.QMainWindow):
             previous_text = self.risk_analysys_table.item(i-1, 0).text()
             self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
             self.risk_priority_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
+            self.risk_solution_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
 
     def UI_init_button_handlers(self):
         self.calculateRiskProbability.clicked.connect(partial(self.risk_probability, "source"))
@@ -189,17 +190,25 @@ class Window(QtWidgets.QMainWindow):
         self.generate_loss_button.clicked.connect(self.generate_loss)
         self.calculate_vrer_button.clicked.connect(self.calculate_vrer)
         self.risk_priority_button.clicked.connect(self.risk_priority)
+        self.show_risk_decrease_table_button.clicked.connect(self.UI_solution_box_to_table)
+
+    def UI_solution_box_to_table(self):
+        for i in range(len(self.risk_events.list)):
+            combobox = self.findChild(QComboBox, f"riskSolutionBox{i+1}")
+            choosen_solution = combobox.currentText()
+            self.risk_solution_table.setItem(i, 1, QTableWidgetItem(choosen_solution))
+        self.riskSolutionWidget.setCurrentIndex(1)
 
     def generate_expert_risk_estimates(self):
-        for i in range(1, len(self.risk_events.list) + 1):
+        for i in range(len(self.risk_events.list)):
             for j in range(1, EXPERT_AMOUNT+1):
-                self.risk_analysys_table.setItem(i-1, j, QTableWidgetItem(str(round(random(), 2))))
+                self.risk_analysys_table.setItem(i, j, QTableWidgetItem(str(round(random(), 2))))
     
     def generate_loss(self):
-        for i in range(1, len(self.risk_events.list) + 1):
+        for i in range(len(self.risk_events.list)):
             value = round(random(), 2)
             self.risk_events.loss.append(value)
-            self.risk_priority_table.setItem(i-1, 2, QTableWidgetItem(str(value)))
+            self.risk_priority_table.setItem(i, 2, QTableWidgetItem(str(value)))
 
     def UI_init_vrer_page(self):
         self.min_vrer_box.setText(str(self.risk_events.min_vrer))
