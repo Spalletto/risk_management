@@ -91,8 +91,11 @@ class RiskEvents:
                             )
     }
         self.vrer = []
+        self.vrer2 = []
         self.loss = []
+        self.loss2 = []
         self.expert_estimating = []
+        self.expert_monitoring = []
 
     @property
     def list(self):
@@ -105,6 +108,14 @@ class RiskEvents:
     @property
     def max_vrer(self):
         return max(self.vrer)
+    
+    @property
+    def min_vrer2(self):
+        return min(self.vrer2)
+
+    @property
+    def max_vrer2(self):
+        return max(self.vrer2)
 
     @property
     def vrer_step(self):
@@ -115,6 +126,16 @@ class RiskEvents:
     @property
     def middle_priority_limit(self):
         return round(self.max_vrer - self.vrer_step, 2)
+    
+    @property
+    def vrer_step2(self):
+        return round((self.max_vrer2 - self.min_vrer2) / 3, 2)
+    @property
+    def low_priority_limit2(self):
+        return round(self.min_vrer2 + self.vrer_step2, 2)
+    @property
+    def middle_priority_limit2(self):
+        return round(self.max_vrer2 - self.vrer_step2, 2)
 
 class RiskSources:
     def __init__(self):
@@ -166,33 +187,57 @@ class Window(QtWidgets.QMainWindow):
     def UI_init_tables(self):
         self.risk_analysys_table.setColumnWidth(0, 370)
         self.risk_monitoring_table.setColumnWidth(0, 370)
+
         self.risk_priority_table.setColumnWidth(0, 370)
         self.risk_analysys_table.setColumnWidth(11, 200)
         self.risk_priority_table.setColumnWidth(1, 20)
         self.risk_priority_table.setColumnWidth(2, 95)
         self.risk_priority_table.setColumnWidth(3, 35)
         self.risk_priority_table.setColumnWidth(4, 80)
+
+        self.risk_priority_table2.setColumnWidth(0, 370)
+        self.risk_priority_table2.setColumnWidth(1, 20)
+        self.risk_priority_table2.setColumnWidth(2, 95)
+        self.risk_priority_table2.setColumnWidth(3, 35)
+        self.risk_priority_table2.setColumnWidth(4, 80)
         for i in range(1, EXPERT_AMOUNT + 1):
             self.risk_analysys_table.setColumnWidth(i, 20)
             self.risk_monitoring_table.setColumnWidth(i, 20)
         
-        for i in range(1, len(self.risk_events.list) + 1):
-            previous_text = self.risk_analysys_table.item(i-1, 0).text()
-            self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
-            self.risk_monitoring_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
-            self.risk_priority_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
-            self.risk_solution_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
+        for i in range(len(self.risk_events.list)):
+            previous_text = self.risk_analysys_table.item(i, 0).text()
+            self.risk_analysys_table.setItem(i , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i]))
+            self.risk_monitoring_table.setItem(i, 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i]))
+            self.risk_priority_table.setItem(i, 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i]))
+            self.risk_priority_table2.setItem(i, 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i]))
+            self.risk_solution_table.setItem(i, 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i]))
 
     def UI_init_button_handlers(self):
         self.calculateRiskProbability.clicked.connect(partial(self.risk_probability, "source"))
         self.calculateEventProbability.clicked.connect(partial(self.risk_probability, "event"))
         self.actionMain_menu.triggered.connect(self.back)
-        self.generate_marks_button.clicked.connect(self.generate_expert_risk_estimates)
-        self.event_analysys_button.clicked.connect(self.event_analysys)
-        self.group_result_button.clicked.connect(self.group_priority_result)
-        self.generate_loss_button.clicked.connect(self.generate_loss)
-        self.calculate_vrer_button.clicked.connect(self.calculate_vrer)
-        self.risk_priority_button.clicked.connect(self.risk_priority)
+        
+        # risk analysys page
+        self.generate_marks_button.clicked.connect(partial(self.generate_expert_risk_estimates, "analysys"))
+        self.event_analysys_button.clicked.connect(partial(self.event_analysys, "analysys"))
+        self.group_result_button.clicked.connect(partial(self.group_priority_result, "analysys"))
+        
+        # risk monitoring page
+        self.generate_marks_button2.clicked.connect(partial(self.generate_expert_risk_estimates, "monitoring"))
+        self.event_analysys_button2.clicked.connect(partial(self.event_analysys, "monitoring"))
+        self.group_result_button2.clicked.connect(partial(self.group_priority_result, "monitoring")) 
+        
+        # calculate risk page
+        self.generate_loss_button.clicked.connect(partial(self.generate_loss, "analysys"))
+        self.calculate_vrer_button.clicked.connect(partial(self.calculate_vrer, "analysys"))
+        self.risk_priority_button.clicked.connect(partial(self.risk_priority, "analysys"))
+        
+        # calculate monitoring risk page
+        self.generate_loss_button2.clicked.connect(partial(self.generate_loss, "monitoring"))
+        self.calculate_evrer_button.clicked.connect(partial(self.calculate_vrer, "monitoring"))
+        self.risk_priority_button2.clicked.connect(partial(self.risk_priority, "monitoring"))
+
+        # risk solution page
         self.show_risk_decrease_table_button.clicked.connect(self.UI_solution_box_to_table)
 
     def UI_solution_box_to_table(self):
@@ -202,67 +247,140 @@ class Window(QtWidgets.QMainWindow):
             self.risk_solution_table.setItem(i, 1, QTableWidgetItem(choosen_solution))
         self.riskSolutionWidget.setCurrentIndex(1)
 
-    def generate_expert_risk_estimates(self):
+    def generate_expert_risk_estimates(self, type_):
+        if type_ == "analysys":
+            table = self.risk_analysys_table
+            correlation = 0
+        elif type_ == "monitoring":
+            table = self.risk_monitoring_table
+            correlation = -0.15
+            
         for i in range(len(self.risk_events.list)):
             for j in range(1, EXPERT_AMOUNT+1):
-                self.risk_analysys_table.setItem(i, j, QTableWidgetItem(str(round(random(), 2))))
+                table.setItem(i, j, QTableWidgetItem(str(round(random() + correlation, 2))))
     
-    def generate_loss(self):
+    def generate_loss(self, type_):
+        if type_ == "analysys":
+            loss = self.risk_events.loss
+            table = self.risk_priority_table
+        elif type_ == "monitoring":
+            loss = self.risk_events.loss2
+            table = self.risk_priority_table2
+            
         for i in range(len(self.risk_events.list)):
             value = round(random(), 2)
-            self.risk_events.loss.append(value)
-            self.risk_priority_table.setItem(i, 2, QTableWidgetItem(str(value)))
+            loss.append(value)
+            table.setItem(i, 2, QTableWidgetItem(str(value)))
 
-    def UI_init_vrer_page(self):
-        self.min_vrer_box.setText(str(self.risk_events.min_vrer))
-        self.max_vrer_box.setText(str(self.risk_events.max_vrer))
+    def UI_init_vrer_page(self, type_):
+        if type_ == "analysys":
+            min_vrer_box = self.min_vrer_box
+            max_vrer_box = self.max_vrer_box
 
-        self.low_interval_box.setText(f"[{self.risk_events.min_vrer}; {self.risk_events.low_priority_limit})")
-        self.middle_interval_box.setText(f"[{self.risk_events.low_priority_limit}; {self.risk_events.middle_priority_limit})")
-        self.high_interval_box.setText(f"[{self.risk_events.low_priority_limit}; {self.risk_events.max_vrer}]")
+            min_vrer = self.risk_events.min_vrer
+            max_vrer = self.risk_events.max_vrer
 
-    def risk_priority(self):
-        self.UI_init_vrer_page()
+            low_interval_box = self.low_interval_box
+            middle_interval_box = self.middle_interval_box
+            high_interval_box = self.high_interval_box
 
-        for i in range(1, len(self.risk_events.list) + 1):
-            if self.risk_events.vrer[i-1] < self.risk_events.low_priority_limit:
+            low_priority_limit = self.risk_events.low_priority_limit
+            middle_priority_limit = self.risk_events.middle_priority_limit
+
+        elif type_ == "monitoring":
+            min_vrer_box = self.min_evrer_box
+            max_vrer_box = self.max_evrer_box
+
+            min_vrer = self.risk_events.min_vrer2
+            max_vrer = self.risk_events.max_vrer2
+
+            low_interval_box = self.low_interval_box2
+            middle_interval_box = self.middle_interval_box2
+            high_interval_box = self.high_interval_box2
+
+            low_priority_limit = self.risk_events.low_priority_limit2
+            middle_priority_limit = self.risk_events.middle_priority_limit2
+
+        min_vrer_box.setText(str(min_vrer))
+        max_vrer_box.setText(str(max_vrer))
+
+        low_interval_box.setText(f"[{min_vrer}; {low_priority_limit})")
+        middle_interval_box.setText(f"[{low_priority_limit}; {middle_priority_limit})")
+        high_interval_box.setText(f"[{low_priority_limit}; {max_vrer}]")
+
+    def risk_priority(self, type_):
+        if type_ == "analysys":
+            table = self.risk_priority_table
+            vrer_list = self.risk_events.vrer
+            low_priority_limit = self.risk_events.low_priority_limit
+            middle_priority_limit = self.risk_events.middle_priority_limit
+        elif type_ == "monitoring":
+            table = self.risk_priority_table2
+            vrer_list = self.risk_events.vrer2
+            low_priority_limit = self.risk_events.low_priority_limit2
+            middle_priority_limit = self.risk_events.middle_priority_limit2
+
+        self.UI_init_vrer_page(type_)
+
+        for i in range(len(self.risk_events.list)):
+            if vrer_list[i] < low_priority_limit:
                 priority = "НИЗЬКИЙ"
-            elif self.risk_events.vrer[i-1] < self.risk_events.middle_priority_limit:
+            elif vrer_list[i] < middle_priority_limit:
                 priority = "СЕРЕДНІЙ"
             else:
                 priority = "ВИСОКИЙ"
 
-            self.risk_priority_table.setItem(i-1, 4, QTableWidgetItem(priority))
+            table.setItem(i, 4, QTableWidgetItem(priority))
 
 
-    def calculate_vrer(self):
-        for i in range(1, len(self.risk_events.list) + 1):
-            vrer = round(self.risk_events.expert_estimating[i-1] * self.risk_events.loss[i-1], 2)
-            self.risk_events.vrer.append(vrer)
+    def calculate_vrer(self, type_):
+        if type_ == "analysys":
+            table = self.risk_priority_table
+            expert_marks = self.risk_events.expert_estimating
+            loss = self.risk_events.loss
+            vrer_list = self.risk_events.vrer
+        elif type_ == "monitoring":
+            table = self.risk_priority_table2
+            expert_marks = self.risk_events.expert_monitoring
+            loss = self.risk_events.loss2
+            vrer_list = self.risk_events.vrer2
 
-            self.risk_priority_table.setItem(i-1, 3, QTableWidgetItem(str(vrer)))
+        for i in range(len(self.risk_events.list)):
+            vrer = round(expert_marks[i] * loss[i], 2)
+            vrer_list.append(vrer)
 
-    def event_analysys(self):
-        for i in range(1, len(self.risk_events.list) + 1):
+            table.setItem(i, 3, QTableWidgetItem(str(vrer)))
+
+    def event_analysys(self, type_):
+        if type_ == "analysys":
+            table = self.risk_analysys_table
+            result_table = self.risk_priority_table
+            expert_marks = self.risk_events.expert_estimating
+        elif type_ == "monitoring":
+            table = self.risk_monitoring_table
+            result_table = self.risk_priority_table2
+            expert_marks = self.risk_events.expert_monitoring
+
+        for i in range(len(self.risk_events.list)):
             row_sum = 0
             for j in range(1, EXPERT_AMOUNT+1):
-                row_sum += float(self.risk_analysys_table.item(i-1, j).text())
-            self.risk_events.expert_estimating.append(round(row_sum / EXPERT_AMOUNT, 2))
-            self.risk_analysys_table.setItem(i-1, 11, QTableWidgetItem(str(round(row_sum / EXPERT_AMOUNT, 2))))
-            self.risk_priority_table.setItem(i-1, 1, QTableWidgetItem(str(round(row_sum / EXPERT_AMOUNT, 2))))
+                row_sum += float(table.item(i, j).text())
+            expert_marks.append(round(row_sum / EXPERT_AMOUNT, 2))
+            table.setItem(i, 11, QTableWidgetItem(str(round(row_sum / EXPERT_AMOUNT, 2))))
+            result_table.setItem(i, 1, QTableWidgetItem(str(round(row_sum / EXPERT_AMOUNT, 2))))
 
-    def calculate_group_risk(self, offset, group_size, row_index):
+    def calculate_group_risk(self, table, result_table, offset, group_size, row_index):
         group_estimates_sum = 0
         for i in range(offset + 1, offset + group_size + 1):
-            event_estimates_sum = float(self.risk_analysys_table.item(i-1, 11).text())
+            event_estimates_sum = float(table.item(i-1, 11).text())
             group_estimates_sum += event_estimates_sum
 
-        self.group_result_table.setItem(0, row_index, QTableWidgetItem(str(round(group_estimates_sum / len(self.risk_events.list), 2))))
+        result_table.setItem(0, row_index, QTableWidgetItem(str(round(group_estimates_sum / len(self.risk_events.list), 2))))
 
         return group_estimates_sum / len(self.risk_events.list)
 
-    def UI_group_priority(self, total_sum):
-        self.total_result.setText(str(round(total_sum, 2)))
+    def UI_group_priority(self, total_sum, result_label, result_status_label):
+        result_label.setText(str(round(total_sum, 2)))
 
         result = "Ймовірність виникнення ризикової події є "
         if total_sum < 0.1:
@@ -276,17 +394,29 @@ class Window(QtWidgets.QMainWindow):
         else:
             result += "дуже високою"
         
-        self.label_result.setText(result)
+        result_status_label.setText(result)
         self.analysysWidget.setCurrentIndex(1)
+        self.monitoringWidget.setCurrentIndex(1)
 
-    def group_priority_result(self):
+    def group_priority_result(self, type_):
+        if type_ == "analysys":
+            table = self.risk_analysys_table
+            result_table = self.group_result_table
+            result_label = self.total_result
+            result_status_label = self.label_result
+        elif type_ == "monitoring":
+            table = self.risk_monitoring_table
+            result_table = self.group_result_table2
+            result_label = self.total_result2
+            result_status_label = self.label_result2
+
         total_sum = 0
         offset = 0
         for row_index, risk_type in enumerate(RISK_TYPES):
-            total_sum += self.calculate_group_risk(offset, len(self.risk_events.dict[risk_type]), row_index)
+            total_sum += self.calculate_group_risk(table, result_table, offset, len(self.risk_events.dict[risk_type]), row_index)
             offset += len(self.risk_events.dict[risk_type])
         
-        self.UI_group_priority(total_sum)
+        self.UI_group_priority(total_sum, result_label, result_status_label)
 
     def back(self):
         self.riskEventsWidget.setCurrentIndex(1)
