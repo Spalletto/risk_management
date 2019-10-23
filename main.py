@@ -1,9 +1,11 @@
-from PyQt5 import QtCore, uic, QtWidgets
-from PyQt5.QtCore import pyqtSignal, pyqtSlot
-from PyQt5.QtWidgets import QTableWidget,QTableWidgetItem, QCheckBox, QComboBox, QLabel
 import sys
-from random import random
 from functools import partial
+from random import random
+
+from PyQt5 import QtCore, QtWidgets, uic
+from PyQt5.QtCore import pyqtSignal, pyqtSlot
+from PyQt5.QtWidgets import (QCheckBox, QComboBox, QLabel, QTableWidget,
+                             QTableWidgetItem)
 
 EXPERT_AMOUNT = 10
 RISK_TYPES = ('tech', 'money', 'plan', 'manage')
@@ -179,6 +181,10 @@ class Window(QtWidgets.QMainWindow):
         self.init_Data()
         self.init_UI()
         
+    def init_Data(self):
+        self.risk_events = RiskEvents()
+        self.risk_sources = RiskSources()
+
     def init_UI(self):
         self.UI_init_tables()
         self.UI_init_button_handlers()
@@ -247,31 +253,6 @@ class Window(QtWidgets.QMainWindow):
             self.risk_solution_table.setItem(i, 1, QTableWidgetItem(choosen_solution))
         self.riskSolutionWidget.setCurrentIndex(1)
 
-    def generate_expert_risk_estimates(self, type_):
-        if type_ == "analysys":
-            table = self.risk_analysys_table
-            correlation = 0
-        elif type_ == "monitoring":
-            table = self.risk_monitoring_table
-            correlation = -0.15
-            
-        for i in range(len(self.risk_events.list)):
-            for j in range(1, EXPERT_AMOUNT+1):
-                table.setItem(i, j, QTableWidgetItem(str(round(random() + correlation, 2))))
-    
-    def generate_loss(self, type_):
-        if type_ == "analysys":
-            loss = self.risk_events.loss
-            table = self.risk_priority_table
-        elif type_ == "monitoring":
-            loss = self.risk_events.loss2
-            table = self.risk_priority_table2
-            
-        for i in range(len(self.risk_events.list)):
-            value = round(random(), 2)
-            loss.append(value)
-            table.setItem(i, 2, QTableWidgetItem(str(value)))
-
     def UI_init_vrer_page(self, type_):
         if type_ == "analysys":
             min_vrer_box = self.min_vrer_box
@@ -308,6 +289,72 @@ class Window(QtWidgets.QMainWindow):
         middle_interval_box.setText(f"[{low_priority_limit}; {middle_priority_limit})")
         high_interval_box.setText(f"[{low_priority_limit}; {max_vrer}]")
 
+    def UI_group_priority(self, total_sum, result_label, result_status_label):
+        result_label.setText(str(round(total_sum, 2)))
+
+        result = "Ймовірність виникнення ризикової події є "
+        if total_sum < 0.1:
+            result += "дуже низькою"
+        elif total_sum < 0.25:
+            result += "низькою"
+        elif total_sum < 0.5:
+            result += "середньою"
+        elif total_sum < 0.75:
+            result += "високою"
+        else:
+            result += "дуже високою"
+        
+        result_status_label.setText(result)
+        self.analysysWidget.setCurrentIndex(1)
+        self.monitoringWidget.setCurrentIndex(1)
+
+    def UI_write_table(self, table, col, row, value):
+        table.setItem(col, row, QTableWidgetItem(str(value)))
+
+    def UI_probabilities_to_table(self, type_, probabilities):
+        table = self.findChild(QTableWidget, f"risk_{type_}_table")
+        for index, risk_type in enumerate(RISK_TYPES):
+            self.UI_write_table(table, 0, index, probabilities[risk_type])
+        self.UI_write_table(table, 0, 4, sum(probabilities.values()))
+    
+    def UI_set_risk_page(self, type_):
+        if type_ == "source":
+            self.riskSourcesWidget.setCurrentIndex(0)
+        elif type_ == "event":
+            self.riskEventsWidget.setCurrentIndex(0)
+
+    def UI_set_risk_solution_comboboxes(self):
+        for i, v in enumerate(self.risk_events.list):
+            combobox = self.findChild(QComboBox, f"riskSolutionBox{i+1}")
+            combobox.addItems(RiskDecreasing.riskDecreasingEvents)
+            label = self.findChild(QLabel, f"riskLabel{i+1}")
+            label.setText(label.text() + ' ' + v)
+
+    def generate_expert_risk_estimates(self, type_):
+        if type_ == "analysys":
+            table = self.risk_analysys_table
+            correlation = 0
+        elif type_ == "monitoring":
+            table = self.risk_monitoring_table
+            correlation = -0.15
+            
+        for i in range(len(self.risk_events.list)):
+            for j in range(1, EXPERT_AMOUNT+1):
+                table.setItem(i, j, QTableWidgetItem(str(round(random() + correlation, 2))))
+    
+    def generate_loss(self, type_):
+        if type_ == "analysys":
+            loss = self.risk_events.loss
+            table = self.risk_priority_table
+        elif type_ == "monitoring":
+            loss = self.risk_events.loss2
+            table = self.risk_priority_table2
+            
+        for i in range(len(self.risk_events.list)):
+            value = round(random(), 2)
+            loss.append(value)
+            table.setItem(i, 2, QTableWidgetItem(str(value)))
+
     def risk_priority(self, type_):
         if type_ == "analysys":
             table = self.risk_priority_table
@@ -331,7 +378,6 @@ class Window(QtWidgets.QMainWindow):
                 priority = "ВИСОКИЙ"
 
             table.setItem(i, 4, QTableWidgetItem(priority))
-
 
     def calculate_vrer(self, type_):
         if type_ == "analysys":
@@ -379,25 +425,6 @@ class Window(QtWidgets.QMainWindow):
 
         return group_estimates_sum / len(self.risk_events.list)
 
-    def UI_group_priority(self, total_sum, result_label, result_status_label):
-        result_label.setText(str(round(total_sum, 2)))
-
-        result = "Ймовірність виникнення ризикової події є "
-        if total_sum < 0.1:
-            result += "дуже низькою"
-        elif total_sum < 0.25:
-            result += "низькою"
-        elif total_sum < 0.5:
-            result += "середньою"
-        elif total_sum < 0.75:
-            result += "високою"
-        else:
-            result += "дуже високою"
-        
-        result_status_label.setText(result)
-        self.analysysWidget.setCurrentIndex(1)
-        self.monitoringWidget.setCurrentIndex(1)
-
     def group_priority_result(self, type_):
         if type_ == "analysys":
             table = self.risk_analysys_table
@@ -422,11 +449,7 @@ class Window(QtWidgets.QMainWindow):
         self.riskEventsWidget.setCurrentIndex(1)
         self.riskSourcesWidget.setCurrentIndex(1)
         self.analysysWidget.setCurrentIndex(0)
-        
-    def init_Data(self):
-        self.risk_events = RiskEvents()
-        self.risk_sources = RiskSources()
-        
+                
     def calculate_checked_box(self, type_):
         risks = dict.fromkeys(RISK_TYPES, 0)
         for risk_type in RISK_TYPES:
@@ -443,30 +466,8 @@ class Window(QtWidgets.QMainWindow):
         probabilities = dict.fromkeys(RISK_TYPES, 0)
         for risk_type in RISK_TYPES:
             probabilities[risk_type] = round((risks[risk_type] / amount) * 100, 2)
-        return probabilities
+        return probabilities 
     
-    def UI_write_table(self, table, col, row, value):
-        table.setItem(col, row, QTableWidgetItem(str(value)))
-
-    def UI_probabilities_to_table(self, type_, probabilities):
-        table = self.findChild(QTableWidget, f"risk_{type_}_table")
-        for index, risk_type in enumerate(RISK_TYPES):
-            self.UI_write_table(table, 0, index, probabilities[risk_type])
-        self.UI_write_table(table, 0, 4, sum(probabilities.values()))
-    
-    def UI_set_risk_page(self, type_):
-        if type_ == "source":
-            self.riskSourcesWidget.setCurrentIndex(0)
-        elif type_ == "event":
-            self.riskEventsWidget.setCurrentIndex(0)
-
-    def UI_set_risk_solution_comboboxes(self):
-        for i, v in enumerate(self.risk_events.list):
-            combobox = self.findChild(QComboBox, f"riskSolutionBox{i+1}")
-            combobox.addItems(RiskDecreasing.riskDecreasingEvents)
-            label = self.findChild(QLabel, f"riskLabel{i+1}")
-            label.setText(label.text() + ' ' + v)
-
     def risk_probability(self, type_):
         if type_ == "source":
             risk_count = len(self.risk_sources.list)
