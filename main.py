@@ -165,6 +165,7 @@ class Window(QtWidgets.QMainWindow):
 
     def UI_init_tables(self):
         self.risk_analysys_table.setColumnWidth(0, 370)
+        self.risk_monitoring_table.setColumnWidth(0, 370)
         self.risk_priority_table.setColumnWidth(0, 370)
         self.risk_analysys_table.setColumnWidth(11, 200)
         self.risk_priority_table.setColumnWidth(1, 20)
@@ -173,10 +174,12 @@ class Window(QtWidgets.QMainWindow):
         self.risk_priority_table.setColumnWidth(4, 80)
         for i in range(1, EXPERT_AMOUNT + 1):
             self.risk_analysys_table.setColumnWidth(i, 20)
+            self.risk_monitoring_table.setColumnWidth(i, 20)
         
         for i in range(1, len(self.risk_events.list) + 1):
             previous_text = self.risk_analysys_table.item(i-1, 0).text()
             self.risk_analysys_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
+            self.risk_monitoring_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
             self.risk_priority_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
             self.risk_solution_table.setItem(i-1 , 0, QTableWidgetItem(previous_text + ', ' + self.risk_events.list[i-1]))
 
